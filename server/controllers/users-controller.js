@@ -1,10 +1,11 @@
-const uuid = require("uuid/v4");
+// const uuid = require("uuid/v4");
 const { validationResult } = require("express-validator");
 const HttpError = require("../models/http-error");
 
+//id 프로퍼티는 필요없다. MongoDB가 자동으로 부여해주기 떄문에
 const DUMMEY_USER = [
   {
-    id: "ul",
+    // id: "ul",
     name: "max",
     email: "test@test.com",
     pasword: "qweqwe",
