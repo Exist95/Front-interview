@@ -1,5 +1,6 @@
 const { validationResult } = require("express-validator");
 const User = require("../models/user");
+const bcrypt = require("bcryptjs");
 
 //모든 유저 호출
 const getUsers = async (req, res, next) => {
@@ -61,8 +62,6 @@ const deleteUser = async (req, res, next) => {
   res.status(201).json({ message: "success deleted user" });
 };
 
-// res.status(201).json({ user: createdUser.toObject({ getters: true }) });
-
 //회원가입
 const signup = async (req, res, next) => {
   const errors = validationResult(req);
@@ -92,10 +91,20 @@ const signup = async (req, res, next) => {
     return next(error);
   }
 
+  let hashedPassword;
+  try {
+    hashedPassword = await bcrypt.hash(password, 12);
+  } catch (err) {
+    const error = res.status(500).json({
+      message: "Could not create user, please try again.",
+    });
+    return next(error);
+  }
+
   const createdUser = new User({
     name,
     email,
-    password,
+    password: hashedPassword,
     image: "qweqwe",
     totalPoint: 0,
     wrongAnswer: [],
@@ -138,6 +147,7 @@ const login = async (req, res, next) => {
 
   let isValidPassword = false;
   try {
+    //compare - 평문 비밀번호를 인수 받는다.
     isValidPassword = await bcrypt.compare(password, existingUser.password);
   } catch (err) {
     const error = res.status(500).json({
