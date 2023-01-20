@@ -9,7 +9,9 @@ const userSchema = new Schema({
   password: { type: String, required: true, minlength: 6 },
   image: { type: String, required: true },
   totalPoint: { type: Number, required: true },
-  game: [{ type: mongoose.Types.ObjectId, required: true, ref: "game" }],
+  wrongAnswer: [
+    { type: mongoose.Types.ObjectId, required: true, ref: "wrongAnswer" },
+  ],
 });
 
 userSchema.plugin(uniqueValidator);

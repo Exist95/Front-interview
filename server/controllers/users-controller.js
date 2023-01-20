@@ -62,7 +62,7 @@ const signup = async (req, res, next) => {
     password,
     image: "qweqwe",
     totalPoint: 0,
-    game: [],
+    wrongAnswer: [],
   });
 
   try {
