@@ -12,18 +12,23 @@ const Question = require("../models/question");
 // ];
 
 const getQuestion = async (req, res, next) => {
-  let allUser;
+  let questions;
   try {
-    allUser = await Question.findAll();
+    questions = await Question.find({}, "");
   } catch (err) {
     const error = res.status(500).json({
       message: "Something went wrong, could not find a question",
     });
     return next(error);
   }
-  res.json({ allUser: allUser.toObject({ geteers: true }) });
+  res.json({
+    questions: questions.map((question) =>
+      question.toObject({ geteers: true })
+    ),
+  });
 };
 
+//Client에서는 사용할 필요 없음
 const createQuestion = async (req, res, next) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
