@@ -16,10 +16,9 @@ const getQuestion = async (req, res, next) => {
   try {
     allUser = await Question.findAll();
   } catch (err) {
-    const error = new HttpError(
-      "Something went wrong, could not find a question",
-      500
-    );
+    const error = res.status(500).json({
+      message: "Something went wrong, could not find a question",
+    });
     return next(error);
   }
   res.json({ allUser: allUser.toObject({ geteers: true }) });
@@ -44,12 +43,12 @@ const createQuestion = async (req, res, next) => {
   try {
     await createdQuestion.save();
   } catch (err) {
-    const error = new HttpError(
-      "Creating question failed, please try again.",
-      500
-    );
+    const error = res.status(500).json({
+      message: "Creating question failed, please try again.",
+    });
     return next(error);
   }
+  res.status(201).json({ question: createQuestion });
 };
 
 exports.getQuestion = getQuestion;
