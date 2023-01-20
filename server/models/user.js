@@ -10,7 +10,7 @@ const userSchema = new Schema({
   image: { type: String, required: true },
   totalPoint: { type: Number, required: true },
   wrongAnswer: [
-    { type: mongoose.Types.ObjectId, required: true, ref: "wrongAnswer" },
+    { type: mongoose.Types.ObjectId, required: true, ref: "Question" },
   ],
 });
 

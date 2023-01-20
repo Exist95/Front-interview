@@ -18,10 +18,10 @@ const getUsers = async (req, res, next) => {
   try {
     users = await User.find({}, "-password");
   } catch (err) {
-    const error = new HttpError(
-      "Fetching users failed, please try again later.",
-      500
-    );
+    const error = res
+      .status(500)
+      .json({ message: "Fetching users failed, please try again later." });
+
     return next(error);
   }
   res.json({ users: users.map((user) => user.toObject({ getters: true })) });
@@ -78,15 +78,49 @@ const signup = async (req, res, next) => {
 };
 
 //로그인
-const login = (req, res, next) => {
+const login = async (req, res, next) => {
   const { email, password } = req.body;
 
-  const identifiedUser = DUMMEY_USER.find((u) => u.email === email);
-  if (!identifiedUser || identifiedUser.pasword !== password) {
-    throw new HttpError("Could not identify user", 401);
+  let existingUser;
+
+  try {
+    existingUser = await User.findOne({ email: email });
+  } catch (err) {
+    const error = res
+      .status(500)
+      .json({ message: "Logging in failed, please try again later." });
+    return next(error);
   }
 
-  res.json({ message: "Logged in" });
+  if (!existingUser) {
+    const error = res
+      .status(403)
+      .json({ message: "Invalid credentials, could not log you in." });
+
+    return next(error);
+  }
+
+  let isValidPassword = false;
+  try {
+    isValidPassword = await bcrypt.compare(password, existingUser.password);
+  } catch (err) {
+    const error = res.status(500).json({
+      message:
+        "Could not log you in, please check your credentials and try again.",
+    });
+
+    return next(error);
+  }
+
+  if (!isValidPassword) {
+    const error = res
+      .status(403)
+      .json({ message: "Invalid credentials, could not log you in." });
+
+    return next(error);
+  }
+
+  res.status(201).json({ message: "Logged in" });
 };
 
 exports.getUsers = getUsers;
