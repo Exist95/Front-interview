@@ -1,18 +1,7 @@
-// const uuid = require("uuid/v4");
 const { validationResult } = require("express-validator");
-const HttpError = require("../models/http-error");
 const User = require("../models/user");
 
-//id 프로퍼티는 필요없다. MongoDB가 자동으로 부여해주기 떄문에
-// const DUMMEY_USER = [
-//   {
-//     id: "ul",
-//     name: "max",
-//     email: "test@test.com",
-//     pasword: "qweqwe",
-//   },
-// ];
-
+//모든 유저 호출
 const getUsers = async (req, res, next) => {
   let users;
   try {
@@ -26,6 +15,53 @@ const getUsers = async (req, res, next) => {
   }
   res.json({ users: users.map((user) => user.toObject({ getters: true })) });
 };
+
+//특정 유저 호출
+const getUser = async (req, res, next) => {
+  const userId = req.params.uid;
+
+  let user;
+  try {
+    user = await User.findById(userId);
+  } catch {
+    const error = res
+      .status(500)
+      .json({ message: "Something went wrong, could not find a user." });
+    return next(error);
+  }
+
+  if (!user) {
+    const error = res
+      .status(404)
+      .json({ message: "Could not find user for the provided id." });
+    return next(error);
+  }
+  res.json({ user: user.toObject({ getters: true }) });
+};
+
+//특정 유저 탈퇴
+const deleteUser = async (req, res, next) => {
+  const userId = req.params.uid;
+
+  let user;
+  try {
+    user = await User.findByIdAndDelete(userId);
+  } catch {
+    const error = res
+      .status(500)
+      .json({ message: "Something went wrong, could not find a user." });
+    return next(error);
+  }
+  if (!user) {
+    const error = res
+      .status(404)
+      .json({ message: "Could not find user for the provided id." });
+    return next(error);
+  }
+  res.status(201).json({ message: "success deleted user" });
+};
+
+// res.status(201).json({ user: createdUser.toObject({ getters: true }) });
 
 //회원가입
 const signup = async (req, res, next) => {
@@ -124,5 +160,7 @@ const login = async (req, res, next) => {
 };
 
 exports.getUsers = getUsers;
+exports.getUser = getUser;
 exports.signup = signup;
 exports.login = login;
+exports.deleteUser = deleteUser;
