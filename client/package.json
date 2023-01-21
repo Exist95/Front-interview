@@ -25,6 +25,11 @@
     "recoil": "^0.7.6",
     "styled-components": "^5.3.6",
     "react-native-gesture-handler": "~2.8.0"
+    "react-native-web": "~0.18.9",
+    "recoil": "^0.7.6",
+    "styled-components": "^5.3.6",
+    "react-native-screens": "~3.18.0",
+    "react-native-safe-area-context": "4.4.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
