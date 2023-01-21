@@ -108,7 +108,6 @@ const signup = async (req, res, next) => {
     name,
     email,
     password: hashedPassword,
-    image: "qweqwe",
     totalPoint: 0,
     wrongAnswer: [],
   });
