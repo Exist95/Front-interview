@@ -8,6 +8,7 @@ const BtnContainer = styled.TouchableOpacity`
   position: absolute;
   justify-content: center;
   align-items: center;
+  top: 530;
 `;
 
 const BtnText = styled.Text`

@@ -7,7 +7,7 @@ const Footer = () => {
       <TouchableOpacity>
         <FooterBtn>홈</FooterBtn>
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => {}}>
+      <TouchableOpacity>
         <FooterBtn>오답노트</FooterBtn>
       </TouchableOpacity>
       <FooterBtn>로고</FooterBtn>

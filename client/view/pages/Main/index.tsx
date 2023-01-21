@@ -1,7 +1,7 @@
 import { StatusBar } from "expo-status-bar";
-import Button from "../Button";
-import Footer from "../Footer";
-import Header from "../Header";
+import Button from "../../components/Button";
+import Footer from "../../components/Footer";
+import Header from "../../components/Header";
 import { Container, MainTitle } from "./style";
 
 const Main = () => {
@@ -9,7 +9,6 @@ const Main = () => {
     <Container>
       <Header />
       <MainTitle>프터뷰</MainTitle>
-      <Footer />
       <Button />
       <StatusBar style="light" />
     </Container>

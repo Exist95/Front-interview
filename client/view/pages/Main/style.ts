@@ -9,6 +9,7 @@ const Container = styled.View`
 `;
 
 const MainTitle = styled.Text`
+  flex: 2;
   color: white;
   font-weight: 600;
   font-size: 70%;

@@ -5,7 +5,6 @@ const Container = styled.View`
   justify-content: space-evenly;
   align-items: center;
   flex-direction: row;
-  position: relative;
 `;
 const FooterBtn = styled.Text`
   color: white;
