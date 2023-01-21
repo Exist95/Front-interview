@@ -17,8 +17,8 @@ dotenv.config();
 
 mongoose
   .connect(
-    `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.igsxtdm.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`,
+    "mongodb+srv://manu:qeqe4646adad1313@cluster0.igsxtdm.mongodb.net/test?retryWrites=true&w=majority",
     { useNewUrlParser: true }
   )
-  .then(() => app.listen(8080, () => console.log("Conneting Server")))
+  .then(() => app.listen(8080, () => console.log("Connected server")))
   .catch((err) => console.log(err));

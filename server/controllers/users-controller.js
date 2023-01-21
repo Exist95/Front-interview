@@ -63,6 +63,65 @@ const deleteUser = async (req, res, next) => {
   res.status(201).json({ message: "success deleted user" });
 };
 
+//유저 정보 업데이트
+const updateUser = async (req, res, next) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return next(
+      res
+        .status(422)
+        .json({ message: "Invalid inputs passed, please check your data." })
+    );
+  }
+
+  const { password, totalPoint, wrongAnswer } = req.body;
+  const userId = req.params.uid;
+
+  let user;
+  try {
+    user = await User.findById(userId);
+  } catch {
+    const error = res
+      .status(500)
+      .json({ message: "Something went wrong, could not find a user." });
+    return next(error);
+  }
+
+  if (!user) {
+    const error = res
+      .status(404)
+      .json({ message: "Could not find user for the provided id." });
+    return next(error);
+  }
+
+  if (!totalPoint) {
+    user.password = password;
+
+    try {
+      await user.save();
+    } catch {
+      const error = res
+        .status(500)
+        .json({ message: "Something went wrong, could not update password" });
+      return next(error);
+    }
+  } else if (totalPoint && wrongAnswer) {
+    user.totalPoint = totalPoint;
+    user.wrongAnswer.push(wrongAnswer);
+
+    try {
+      await user.save();
+    } catch {
+      const error = res
+        .status(500)
+        .json({ message: "Something went wrong, could not update totalPoint" });
+      return next(error);
+    }
+  }
+
+  res.status(201).json({ message: "The user was successfully changed." });
+};
+
 //회원가입
 const signup = async (req, res, next) => {
   const errors = validationResult(req);
@@ -93,21 +152,21 @@ const signup = async (req, res, next) => {
     return next(error);
   }
 
-  //비밀번호 암호화
-  let hashedPassword;
-  try {
-    hashedPassword = await bcrypt.hash(password, 12);
-  } catch (err) {
-    const error = res.status(500).json({
-      message: "Could not create user, please try again.",
-    });
-    return next(error);
-  }
+  // 비밀번호 암호화
+  // let hashedPassword;
+  // try {
+  //   hashedPassword = await bcrypt.hash(password, 12);
+  // } catch (err) {
+  //   const error = res.status(500).json({
+  //     message: "Could not create user, please try again.",
+  //   });
+  //   return next(error);
+  // }
 
   const createdUser = new User({
     name,
     email,
-    password: hashedPassword,
+    password,
     totalPoint: 0,
     wrongAnswer: [],
   });
@@ -147,26 +206,26 @@ const login = async (req, res, next) => {
     return next(error);
   }
 
-  let isValidPassword = false;
-  try {
-    //compare - 평문 비밀번호를 인수 받는다.
-    isValidPassword = await bcrypt.compare(password, existingUser.password);
-  } catch (err) {
-    const error = res.status(500).json({
-      message:
-        "Could not log you in, please check your credentials and try again.",
-    });
+  // let isValidPassword = false;
+  // try {
+  //   //compare - 평문 비밀번호를 인수 받는다.
+  //   isValidPassword = await bcrypt.compare(password, existingUser.password);
+  // } catch (err) {
+  //   const error = res.status(500).json({
+  //     message:
+  //       "Could not log you in, please check your credentials and try again.",
+  //   });
 
-    return next(error);
-  }
+  //   return next(error);
+  // }
 
-  if (!isValidPassword) {
-    const error = res
-      .status(403)
-      .json({ message: "Invalid credentials, could not log you in." });
+  // if (!isValidPassword) {
+  //   const error = res
+  //     .status(403)
+  //     .json({ message: "Invalid credentials, could not log you in." });
 
-    return next(error);
-  }
+  //   return next(error);
+  // }
 
   let token;
   try {
@@ -194,3 +253,4 @@ exports.getUser = getUser;
 exports.signup = signup;
 exports.login = login;
 exports.deleteUser = deleteUser;
+exports.updateUser = updateUser;

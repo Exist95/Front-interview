@@ -9,7 +9,11 @@ const userSchema = new Schema({
   password: { type: String, required: true, minlength: 6 },
   totalPoint: { type: Number, required: true },
   wrongAnswer: [
-    { type: mongoose.Types.ObjectId, required: true, ref: "Question" },
+    {
+      question: { type: String, required: true },
+      answer: { type: String, required: true },
+      part: { type: String, required: true },
+    },
   ],
 });
 

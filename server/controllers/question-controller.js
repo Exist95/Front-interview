@@ -3,14 +3,6 @@ const mongoose = require("mongoose");
 const HttpError = require("../models/http-error");
 const Question = require("../models/question");
 
-// const DUMMEY_QUESTION = [
-//   {
-//     question: "리액트는 중요한가요요요요요?",
-//     answer: "아니요ㅁㄴㅇㅁㄴㅇㅁㄴㅇㄴㅁ",
-//     part: "react",
-//   },
-// ];
-
 const getQuestion = async (req, res, next) => {
   let questions;
   try {
