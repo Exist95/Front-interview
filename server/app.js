@@ -16,9 +16,6 @@ app.use("/api/question", questionRoute);
 dotenv.config();
 
 mongoose
-  .connect(
-    "mongodb+srv://manu:qeqe4646adad1313@cluster0.igsxtdm.mongodb.net/test?retryWrites=true&w=majority",
-    { useNewUrlParser: true }
-  )
+  .connect(process.env.MONGO_URI, { useNewUrlParser: true })
   .then(() => app.listen(8080, () => console.log("Connected server")))
   .catch((err) => console.log(err));
