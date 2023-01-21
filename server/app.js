@@ -14,11 +14,11 @@ app.use("/api/users", usersRoute);
 app.use("/api/question", questionRoute);
 
 dotenv.config();
-const PORT = process.env.PORT;
-
-// app.post("/question", mongoPractice.createQuestion);
 
 mongoose
-  .connect(process.env.MONGO_URI, { useNewUrlParser: true })
-  .then(() => app.listen(`${PORT}`, () => console.log("연결됨")))
+  .connect(
+    `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.igsxtdm.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`,
+    { useNewUrlParser: true }
+  )
+  .then(() => app.listen(8080, () => console.log("Conneting Server")))
   .catch((err) => console.log(err));

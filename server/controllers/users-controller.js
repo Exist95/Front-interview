@@ -1,6 +1,7 @@
 const { validationResult } = require("express-validator");
 const User = require("../models/user");
 const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
 
 //모든 유저 호출
 const getUsers = async (req, res, next) => {
@@ -74,6 +75,7 @@ const signup = async (req, res, next) => {
   }
   const { name, email, password } = req.body;
 
+  //유저 이메일 확인
   let existingUser;
   try {
     existingUser = await User.findOne({ email: email });
@@ -91,6 +93,7 @@ const signup = async (req, res, next) => {
     return next(error);
   }
 
+  //비밀번호 암호화
   let hashedPassword;
   try {
     hashedPassword = await bcrypt.hash(password, 12);
@@ -166,7 +169,25 @@ const login = async (req, res, next) => {
     return next(error);
   }
 
-  res.status(201).json({ message: "Logged in" });
+  let token;
+  try {
+    token = jwt.sign(
+      { userId: existingUser.id, email: existingUser.email },
+      `${process.env.JWT_KEY}`,
+      { expiresIn: "1h" }
+    );
+  } catch (err) {
+    const error = res
+      .status(500)
+      .json({ message: "Logging in failed, please try again later." });
+    return next(error);
+  }
+
+  res.status(201).json({
+    userId: existingUser.id,
+    email: existingUser.email,
+    token: token,
+  });
 };
 
 exports.getUsers = getUsers;
