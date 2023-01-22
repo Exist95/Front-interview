@@ -16,7 +16,6 @@ app.get("/", (req, res) => {
   res.sendFile("index.html", { root: path.join(__dirname, "public") });
 });
 
-
 app.use("/api/users", usersRoute);
 
 app.use("/api/question", questionRoute);
