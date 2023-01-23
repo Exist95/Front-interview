@@ -1,6 +1,6 @@
 import { Text } from "react-native";
 
 const Questions = () => {
-  return <Text>Questions</Text>;
+  return <Text>questions</Text>;
 };
 export default Questions;

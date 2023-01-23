@@ -3,7 +3,7 @@ import styled from "styled-components/native";
 const Container = styled.View`
   flex: 1;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: space-between;
   width: 100%;
 `;
 

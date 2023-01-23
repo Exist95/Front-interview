@@ -1,9 +1,9 @@
-import Routes from "./Routes";
+import TabBar from "./Tab";
 
 export default function App() {
   return (
     <>
-      <Routes />
+      <TabBar />
     </>
   );
 }
