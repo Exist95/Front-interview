@@ -1,18 +1,18 @@
 import { useNavigation } from "@react-navigation/native";
 import React from "react";
-import { BtnContainer, BtnText } from "./style";
+import * as S from "./style";
 
 const Button = () => {
   const navigation = useNavigation<any>();
   return (
-    <BtnContainer
+    <S.BtnContainer
       style={{ bottom: 170, right: 20 }}
       onPress={() => {
         navigation.navigate("Questions");
       }}
     >
-      <BtnText>문제 풀러 가기</BtnText>
-    </BtnContainer>
+      <S.BtnText>문제 풀러 가기</S.BtnText>
+    </S.BtnContainer>
   );
 };
 

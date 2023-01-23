@@ -1,16 +1,16 @@
 import { StatusBar } from "expo-status-bar";
 import Button from "../../components/Button";
 import Header from "../../components/Header";
-import { Container, MainTitle } from "./style";
+import * as S from "./style";
 
 const Main = () => {
   return (
-    <Container>
+    <S.Container>
       <Header />
-      <MainTitle>프터뷰</MainTitle>
+      <S.MainTitle>프터뷰</S.MainTitle>
       <Button />
       <StatusBar style="light" />
-    </Container>
+    </S.Container>
   );
 };
 

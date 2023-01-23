@@ -1,41 +1,33 @@
-import { ScrollView, Text } from "react-native";
-import {
-  AContainer,
-  Answer,
-  BtnContainer,
-  Container,
-  QContainer,
-  QContent,
-  Title,
-} from "./style";
+import { Text } from "react-native";
+import * as S from "./style";
 
 const Questions = () => {
   return (
-    <Container>
-      <QContainer>
-        <Title>Q.</Title>
-        <QContent>질문입니다.</QContent>
-      </QContainer>
-      <AContainer>
-        <Title>A.</Title>
-        <ScrollView style={{ flex: 1 }}>
-          <BtnContainer>
-            <Answer>
+    <S.Container>
+      <S.QContainer>
+        <S.Title>Q.</S.Title>
+        <S.QContent>질문입니다.</S.QContent>
+      </S.QContainer>
+      <S.AContainer>
+        <S.Title>A.</S.Title>
+        <S.ScrollView>
+          <S.BtnContainer>
+            <S.Answer>
               <Text>1번</Text>
-            </Answer>
-            <Answer>
+            </S.Answer>
+            <S.Answer>
               <Text>1번</Text>
-            </Answer>
-            <Answer>
+            </S.Answer>
+            <S.Answer>
               <Text>1번</Text>
-            </Answer>
-            <Answer>
+            </S.Answer>
+            <S.Answer>
               <Text>1번</Text>
-            </Answer>
-          </BtnContainer>
-        </ScrollView>
-      </AContainer>
-    </Container>
+            </S.Answer>
+          </S.BtnContainer>
+        </S.ScrollView>
+      </S.AContainer>
+    </S.Container>
   );
 };
 export default Questions;
