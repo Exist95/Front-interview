@@ -1,5 +1,10 @@
-import TabBar from "./router/Tab";
+import { SafeAreaProvider } from "react-native-safe-area-context";
+import { TabBar } from "./router";
 
 export default function App() {
-  return <TabBar />;
+  return (
+    <SafeAreaProvider>
+      <TabBar />
+    </SafeAreaProvider>
+  );
 }
