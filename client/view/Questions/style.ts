@@ -3,20 +3,23 @@ import styled from "styled-components/native";
 const Container = styled.View`
   flex: 1;
   background-color: #232323;
-  padding: 20% 10%;
+  padding: 20% 5%;
+  align-items: center;
 `;
 
 const QContainer = styled.View`
-  flex: 1;
-  flex-direction: row;
+  flex: 2;
+  justify-content: center;
   align-items: center;
 `;
+
 const Title = styled.Text`
   font-size: 40;
   font-weight: 600;
   color: #ffb9b9;
-  margin-right: 10;
+  margin-bottom: 7%;
 `;
+
 const QContent = styled.Text`
   font-size: 30;
   color: white;
@@ -24,7 +27,7 @@ const QContent = styled.Text`
 
 const AContainer = styled.View`
   flex: 2;
-  flex-direction: row;
+  align-items: center;
 `;
 
 const ScrollView = styled.ScrollView`
@@ -34,15 +37,24 @@ const ScrollView = styled.ScrollView`
 
 const BtnContainer = styled.View`
   flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
 `;
 
-const Answer = styled.View`
-  width: 40%;
-  height: 10%;
+const Answer = styled.TouchableOpacity`
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 45%;
   border-radius: 5;
-  border: 2px solid white;
+  border: 2px solid rgba(255, 255, 255, 0.5);
   align-items: center;
   justify-content: center;
+  padding: 5% 2%;
+  margin: 0 2.5% 10% 2.5%;
+`;
+
+const AContent = styled.Text`
+  color: white;
+  font-size: 20;
 `;
 
 export {
@@ -54,4 +66,5 @@ export {
   BtnContainer,
   Answer,
   ScrollView,
+  AContent,
 };
