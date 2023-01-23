@@ -1,6 +1,6 @@
-import { Text, TouchableOpacity } from "react-native";
 import * as S from "./style";
 const answers = ["파이썬", "자바스크립트", "자바", "타입스크립트"];
+
 export const QuestionsTemp = () => {
   return (
     <S.Container>

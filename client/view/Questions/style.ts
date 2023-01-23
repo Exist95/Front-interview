@@ -12,12 +12,14 @@ const QContainer = styled.View`
   justify-content: center;
   align-items: center;
 `;
+
 const Title = styled.Text`
   font-size: 40;
   font-weight: 600;
   color: #ffb9b9;
   margin-bottom: 7%;
 `;
+
 const QContent = styled.Text`
   font-size: 30;
   color: white;
