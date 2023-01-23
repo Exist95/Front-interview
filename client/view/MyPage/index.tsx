@@ -1,6 +1,6 @@
 import { Text } from "react-native";
 
-const MyPage = () => {
+const MyPageTemp = () => {
   return <Text>MyPage</Text>;
 };
-export default MyPage;
+export default MyPageTemp;

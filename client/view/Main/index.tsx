@@ -1,9 +1,9 @@
 import { StatusBar } from "expo-status-bar";
-import Button from "../../components/Button";
-import Header from "../../components/Header";
+import Button from "../components/Common/Button";
+import Header from "../components/Common/Header";
 import * as S from "./style";
 
-const Main = () => {
+export const MainTemp = () => {
   return (
     <S.Container>
       <Header />
@@ -13,5 +13,3 @@ const Main = () => {
     </S.Container>
   );
 };
-
-export default Main;

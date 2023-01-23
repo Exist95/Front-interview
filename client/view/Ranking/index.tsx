@@ -1,6 +1,6 @@
 import { Text } from "react-native";
 
-const Ranking = () => {
+const RankingTemp = () => {
   return <Text>Ranking</Text>;
 };
-export default Ranking;
+export default RankingTemp;

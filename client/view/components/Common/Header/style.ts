@@ -14,4 +14,4 @@ const Profile = styled.View`
   background-color: gray;
 `;
 
-export { Container, Profile };
+export {Container, Profile};

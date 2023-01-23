@@ -1,11 +1,10 @@
 import { NavigationContainer } from "@react-navigation/native";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
-import Main from "./view/pages/Main";
-import Note from "./view/pages/Note";
+import Note from "../view/pages/Note";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import Ranking from "./view/pages/Ranking";
-import MyPage from "./view/pages/MyPage";
-import StackNavigator from "./Routes";
+import Ranking from "../view/pages/Ranking";
+import MyPage from "../view/pages/MyPage";
+import { StackNavigator } from "./Routes";
 
 const Tab = createBottomTabNavigator();
 

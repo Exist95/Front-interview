@@ -1,11 +1,11 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import Main from "./view/pages/Main";
-import MyPage from "./view/pages/MyPage";
-import Questions from "./view/pages/Questions";
+import Main from "../view/pages/Main";
+import MyPage from "../view/pages/MyPage";
+import Questions from "../view/pages/Questions";
 
 const Stack = createNativeStackNavigator();
 
-const StackNavigator = () => {
+export const StackNavigator = () => {
   return (
     <Stack.Navigator
       initialRouteName="Main"
@@ -17,5 +17,3 @@ const StackNavigator = () => {
     </Stack.Navigator>
   );
 };
-
-export default StackNavigator;
