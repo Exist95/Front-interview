@@ -1,22 +1,20 @@
 import { useNavigation } from "@react-navigation/native";
 import { Pressable, Text } from "react-native";
-import { Container, Profile } from "./style";
+import * as S from "./style";
 
-const Header = () => {
+export const Header = () => {
   const navigation = useNavigation<any>();
 
   return (
-    <Container>
+    <S.Container>
       <Text>logo</Text>
       <Pressable
         onPress={() => {
           navigation.navigate("MyPage");
         }}
       >
-        <Profile />
+        <S.Profile />
       </Pressable>
-    </Container>
+    </S.Container>
   );
 };
-
-export default Header;

@@ -1,9 +1,9 @@
 import { StatusBar } from "expo-status-bar";
-import Button from "../../components/Button";
-import Header from "../../components/Header";
+import { Button } from "../../components/Common/Button";
+import { Header } from "../../components/Common/Header/index";
 import { Container, MainTitle } from "./style";
 
-const Main = () => {
+export const Main = () => {
   return (
     <Container>
       <Header />
@@ -13,5 +13,3 @@ const Main = () => {
     </Container>
   );
 };
-
-export default Main;
