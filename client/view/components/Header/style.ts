@@ -12,7 +12,6 @@ const Profile = styled.View`
   height: 60;
   border-radius: 30;
   background-color: gray;
-  margin-right: 10%;
 `;
 
 export { Container, Profile };

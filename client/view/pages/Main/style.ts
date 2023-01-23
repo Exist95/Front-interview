@@ -5,7 +5,7 @@ const Container = styled.View`
   background-color: #232323;
   align-items: center;
   justify-content: space-between;
-  padding: 20% 0;
+  padding: 20% 10%;
 `;
 
 const MainTitle = styled.Text`
