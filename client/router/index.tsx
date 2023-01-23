@@ -1,14 +1,14 @@
 import { NavigationContainer } from "@react-navigation/native";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
-import Note from "../view/pages/Note";
+import { Note } from "../pages/Note";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import Ranking from "../view/pages/Ranking";
-import MyPage from "../view/pages/MyPage";
+import { Ranking } from "../pages/Ranking";
+import { MyPage } from "../pages/MyPage";
 import { StackNavigator } from "./Routes";
 
 const Tab = createBottomTabNavigator();
 
-const TabBar = () => {
+export const TabBar = () => {
   return (
     <NavigationContainer>
       <Tab.Navigator
@@ -57,5 +57,3 @@ const TabBar = () => {
     </NavigationContainer>
   );
 };
-
-export default TabBar;
