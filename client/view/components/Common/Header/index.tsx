@@ -2,7 +2,7 @@ import { useNavigation } from "@react-navigation/native";
 import { Pressable, Text } from "react-native";
 import * as S from "./style";
 
-const Header = () => {
+export const Header = () => {
   const navigation = useNavigation<any>();
   return (
     <S.Container>
@@ -17,5 +17,3 @@ const Header = () => {
     </S.Container>
   );
 };
-
-export default Header;

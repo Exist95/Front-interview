@@ -1,4 +1,4 @@
-import QuestionsTemp from "../Questions";
+import { QuestionsTemp } from "../Questions";
 
 const Questions = () => {
   return <QuestionsTemp />;

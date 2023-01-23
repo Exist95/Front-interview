@@ -1,4 +1,4 @@
-import RankingTemp from "../Ranking";
+import { RankingTemp } from "../Ranking";
 
 const Ranking = () => {
   return <RankingTemp />;

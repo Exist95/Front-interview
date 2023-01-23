@@ -1,6 +1,6 @@
 import { StatusBar } from "expo-status-bar";
-import Button from "../components/Common/Button";
-import Header from "../components/Common/Header";
+import { Button } from "../components/Common/Button";
+import { Header } from "../components/Common/Header";
 import * as S from "./style";
 
 export const MainTemp = () => {

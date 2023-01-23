@@ -1,7 +1,7 @@
 import { Text } from "react-native";
 import * as S from "./style";
 
-const QuestionsTemp = () => {
+export const QuestionsTemp = () => {
   return (
     <S.Container>
       <S.QContainer>
@@ -30,4 +30,3 @@ const QuestionsTemp = () => {
     </S.Container>
   );
 };
-export default QuestionsTemp;

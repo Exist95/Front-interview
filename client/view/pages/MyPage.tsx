@@ -1,4 +1,4 @@
-import MyPageTemp from "../MyPage";
+import { MyPageTemp } from "../MyPage";
 
 const MyPage = () => {
   return <MyPageTemp />;

@@ -2,7 +2,7 @@ import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import * as S from "./style";
 
-const Button = () => {
+export const Button = () => {
   const navigation = useNavigation<any>();
   return (
     <S.BtnContainer
@@ -15,5 +15,3 @@ const Button = () => {
     </S.BtnContainer>
   );
 };
-
-export default Button;
