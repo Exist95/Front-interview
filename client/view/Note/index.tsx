@@ -1,6 +1,5 @@
 import { Text } from "react-native";
 
-const Note = () => {
+export const NoteTemp = () => {
   return <Text>Note</Text>;
 };
-export default Note;

@@ -4,7 +4,6 @@ import * as S from "./style";
 
 export const Header = () => {
   const navigation = useNavigation<any>();
-
   return (
     <S.Container>
       <Text>logo</Text>

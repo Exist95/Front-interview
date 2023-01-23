@@ -1,5 +1,5 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { Main } from "../view/pages/Main";
+import Main from "../view/pages/Main";
 import MyPage from "../view/pages/MyPage";
 import Questions from "../view/pages/Questions";
 
