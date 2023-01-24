@@ -14,14 +14,14 @@ const QContainer = styled.View`
 `;
 
 const Title = styled.Text`
-  font-size: 40;
+  font-size: 40px;
   font-weight: 600;
   color: #ffb9b9;
   margin-bottom: 7%;
 `;
 
 const QContent = styled.Text`
-  font-size: 30;
+  font-size: 30px;
   color: white;
 `;
 
@@ -44,7 +44,7 @@ const BtnContainer = styled.View`
 const Answer = styled.TouchableOpacity`
   background-color: rgba(0, 0, 0, 0.3);
   width: 45%;
-  border-radius: 5;
+  border-radius: 5px;
   border: 2px solid rgba(255, 255, 255, 0.5);
   align-items: center;
   justify-content: center;
@@ -54,7 +54,7 @@ const Answer = styled.TouchableOpacity`
 
 const AContent = styled.Text`
   color: white;
-  font-size: 20;
+  font-size: 20px;
 `;
 
 export {

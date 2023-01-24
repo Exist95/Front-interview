@@ -1,3 +1,4 @@
+import { Animated } from "react-native";
 import styled from "styled-components/native";
 
 export const Container = styled.View`
@@ -9,8 +10,19 @@ export const Container = styled.View`
 `;
 
 export const MainTitle = styled.Text`
-  flex: 2;
   color: white;
   font-weight: 600;
   font-size: 100px;
 `;
+
+export const SubTitle = styled.Text`
+  font-size: 10px;
+  color: white;
+  align-items: left;
+`;
+
+const Box = styled.View`
+  flex: 2;
+`;
+
+export const AnimationBox = Animated.createAnimatedComponent(Box);
