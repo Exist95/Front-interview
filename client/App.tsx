@@ -1,9 +1,13 @@
-import Routes from "./Routes";
+import { SafeAreaProvider } from "react-native-safe-area-context";
+import { RecoilRoot } from "recoil";
+import { TabBar } from "./router/index";
 
 export default function App() {
   return (
-    <>
-      <Routes />
-    </>
+    <RecoilRoot>
+      <SafeAreaProvider>
+        <TabBar />
+      </SafeAreaProvider>
+    </RecoilRoot>
   );
 }
