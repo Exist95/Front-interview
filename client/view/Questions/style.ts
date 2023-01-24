@@ -2,7 +2,7 @@ import styled from "styled-components/native";
 
 const Container = styled.View`
   flex: 1;
-  background-color: #232323;
+  background-color: ${(props) => props.theme.bgColor};
   padding: 20% 5%;
   align-items: center;
 `;
@@ -16,13 +16,13 @@ const QContainer = styled.View`
 const Title = styled.Text`
   font-size: 40px;
   font-weight: 600;
-  color: #ffb9b9;
+  color: ${(props) => props.theme.titleColor};
   margin-bottom: 7%;
 `;
 
 const QContent = styled.Text`
   font-size: 30px;
-  color: white;
+  color: ${(props) => props.theme.textColor};
 `;
 
 const AContainer = styled.View`
@@ -53,7 +53,7 @@ const Answer = styled.TouchableOpacity`
 `;
 
 const AContent = styled.Text`
-  color: white;
+  color: ${(props) => props.theme.textColor};
   font-size: 20px;
 `;
 

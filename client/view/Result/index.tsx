@@ -1,6 +1,6 @@
 import React from "react";
-import { NavigationButton } from "../components/common/NavigationButton";
-import { Header } from "../components/common/Header";
+import { NavigationButton } from "../components/Common/NavigationButton";
+import { Header } from "../components/Common/Header";
 import * as S from "./style";
 
 export const ResultTemp = () => {

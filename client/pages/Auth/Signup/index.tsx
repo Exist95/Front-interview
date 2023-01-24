@@ -1,5 +1,6 @@
 import React from "react";
+import { Text } from "react-native";
 
 export const SignUp = () => {
-  return <div>SignUp</div>;
+  return <Text>SignUp</Text>;
 };

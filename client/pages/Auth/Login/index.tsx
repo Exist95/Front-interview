@@ -1,5 +1,6 @@
 import React from "react";
+import { Text } from "react-native";
 
 export const Login = () => {
-  return <div>index</div>;
+  return <Text>index</Text>;
 };

@@ -1,4 +1,6 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { Login } from "../pages/Auth/Login";
+import { SignUp } from "../pages/Auth/Signup";
 import { Main } from "../pages/Main";
 import { MyPage } from "../pages/MyPage";
 import { Questions } from "../pages/Questions";
@@ -17,6 +19,8 @@ export const StackNavigator = () => {
         <Stack.Screen name="Questions" component={Questions} />
         <Stack.Screen name="MyPage" component={MyPage} />
         <Stack.Screen name="Result" component={Result} />
+        <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="SignUp" component={SignUp} />
       </Stack.Navigator>
     </>
   );

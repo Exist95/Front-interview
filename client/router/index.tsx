@@ -5,14 +5,19 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ranking } from "../pages/Ranking";
 import { MyPage } from "../pages/MyPage";
 import { StackNavigator } from "./Routes";
-import { Header } from "../view/components/common/Header";
 import Result from "../pages/Result";
+import { ThemeProvider } from "styled-components/native";
+import { useRecoilValue } from "recoil";
+import { darkModeState } from "../store/darkMode";
+import { darkTheme, lightTheme } from "../theme/theme";
+import { DarkModeViewModel } from "../vm/DarkModeViewModel";
 
 const Tab = createBottomTabNavigator();
 
 export const TabBar = () => {
+  const { theme } = DarkModeViewModel();
   return (
-    <>
+    <ThemeProvider theme={theme ? darkTheme : lightTheme}>
       <NavigationContainer>
         <Tab.Navigator
           screenOptions={{
@@ -75,6 +80,6 @@ export const TabBar = () => {
           />
         </Tab.Navigator>
       </NavigationContainer>
-    </>
+    </ThemeProvider>
   );
 };

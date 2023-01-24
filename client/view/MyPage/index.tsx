@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Profile } from "../components/common/Header/style";
+import { Profile } from "../components/Common/Header/style";
 import { DarkMode } from "./DarkMode/index";
 import * as S from "./style";
 

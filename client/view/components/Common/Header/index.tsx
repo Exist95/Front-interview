@@ -1,5 +1,5 @@
 import { useNavigation } from "@react-navigation/native";
-import { Image, Pressable, Text } from "react-native";
+import { Pressable } from "react-native";
 import * as S from "./style";
 
 export const Header = () => {

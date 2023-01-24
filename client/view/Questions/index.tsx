@@ -14,7 +14,7 @@ export const QuestionsTemp = () => {
           <S.BtnContainer>
             {answers.map((answer) => {
               return (
-                <S.Answer>
+                <S.Answer key={answer}>
                   <S.AContent>{answer}</S.AContent>
                 </S.Answer>
               );
