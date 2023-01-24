@@ -4,14 +4,15 @@ export const Container = styled.View`
   flex: 1;
   background-color: #232323;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   padding: 20% 5%;
 `;
 
-export const UserName = styled.Text`
+export const UserResult = styled.Text`
   color: white;
-  flex: 1;
-  font-size: 50px;
+  font-weight: 600;
+  font-size: 40px;
+  align-items: center;
   text-align: center;
-  justify-content: center;
+  flex: 1.5;
 `;

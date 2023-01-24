@@ -1,6 +1,6 @@
 import styled from "styled-components/native";
 
-const BtnContainer = styled.TouchableOpacity`
+export const BtnContainer = styled.TouchableOpacity`
   width: 40%;
   height: 8%;
   border-radius: 8%;
@@ -8,13 +8,11 @@ const BtnContainer = styled.TouchableOpacity`
   position: absolute;
   justify-content: center;
   align-items: center;
-  top: 530;
+  top: 530px;
 `;
 
-const BtnText = styled.Text`
+export const BtnText = styled.Text`
   color: black;
-  font-size: 18;
+  font-size: 18px;
   font-weight: 400;
 `;
-
-export { BtnContainer, BtnText };

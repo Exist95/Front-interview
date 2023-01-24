@@ -1,12 +1,14 @@
 import { useNavigation } from "@react-navigation/native";
-import { Pressable, Text } from "react-native";
+import { Image, Pressable, Text } from "react-native";
 import * as S from "./style";
 
 export const Header = () => {
   const navigation = useNavigation<any>();
   return (
     <S.Container>
-      <Text>logo</Text>
+      <S.Logo
+        source={require("../../../../assets/fterview_icon-removebg-preview.png")}
+      />
       <Pressable
         onPress={() => {
           navigation.navigate("MyPage");
@@ -17,3 +19,6 @@ export const Header = () => {
     </S.Container>
   );
 };
+
+//로그인 됐을 때, 안 됐을 때 프로필 사진 달라야 합니다.
+//사진 두 개 구해서, svg로 변환 필요.
