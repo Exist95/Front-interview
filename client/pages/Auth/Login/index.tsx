@@ -1,6 +1,5 @@
-import React from "react";
-import { Text } from "react-native";
+import LoginTemp from "../../../view/Login";
 
 export const Login = () => {
-  return <Text>index</Text>;
+  return <LoginTemp />;
 };

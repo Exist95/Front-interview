@@ -7,8 +7,6 @@ import { MyPage } from "../pages/MyPage";
 import { StackNavigator } from "./Routes";
 import Result from "../pages/Result";
 import { ThemeProvider } from "styled-components/native";
-import { useRecoilValue } from "recoil";
-import { darkModeState } from "../store/darkMode";
 import { darkTheme, lightTheme } from "../theme/theme";
 import { DarkModeViewModel } from "../vm/DarkModeViewModel";
 
