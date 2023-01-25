@@ -14,7 +14,7 @@ export const MainTemp = () => {
       <S.AnimationBox>
         <S.MainTitle>프터뷰</S.MainTitle>
       </S.AnimationBox>
-      <NavigationButton text={"문제 풀러가기"} />
+      <NavigationButton text={"문제 풀러가기"} destination={"Questions"} />
       <StatusBar style="light" />
       <Pressable onPress={() => navigation.navigate("Login")}>
         <Text style={{ marginBottom: 20 }}>로그인</Text>
