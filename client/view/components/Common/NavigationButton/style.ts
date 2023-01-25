@@ -12,7 +12,7 @@ export const BtnContainer = styled.TouchableOpacity`
 `;
 
 export const BtnText = styled.Text`
-  color: black;
+  color: ${(props) => props.theme.textColor};
   font-size: 18px;
   font-weight: 400;
 `;

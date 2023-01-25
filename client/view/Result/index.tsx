@@ -12,7 +12,7 @@ export const ResultTemp = () => {
         점수는{"\n"}
         80점입니다.
       </S.UserResult>
-      <NavigationButton text={"홈으로"} />
+      <NavigationButton text={"홈으로"} destination={"Main"} />
     </S.Container>
   );
 };
