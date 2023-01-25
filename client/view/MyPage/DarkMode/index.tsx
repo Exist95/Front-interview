@@ -4,12 +4,14 @@ import { DarkModeViewModel } from "../../../vm/DarkModeViewModel";
 import * as S from "./style";
 
 export const DarkMode = () => {
-  const { onClickDarkMode } = DarkModeViewModel();
+  const { onClickDarkMode, theme } = DarkModeViewModel();
   return (
     <Pressable onPress={onClickDarkMode}>
-      <S.DarkMode
-        source={require("../../../assets/fterview_icon-removebg-preview.png")}
-      />
+      {theme ? (
+        <S.DarkMode source={require("../../../assets/moon.png")} />
+      ) : (
+        <S.DarkMode source={require("../../../assets/sun.png")} />
+      )}
     </Pressable>
   );
 };
