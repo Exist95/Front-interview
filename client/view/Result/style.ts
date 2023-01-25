@@ -14,5 +14,5 @@ export const UserResult = styled.Text`
   font-size: 40px;
   align-items: center;
   text-align: center;
-  flex: 1.5;
+  flex: 2;
 `;

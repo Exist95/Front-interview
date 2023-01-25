@@ -24,7 +24,7 @@ const Input = styled.TextInput`
 const LoginText = styled.Text`
   color: ${(props) => props.theme.textColor};
   position: absolute;
-  bottom: 150;
+  bottom: 150px;
 `;
 
 export { LoginTitle, Input, LoginText, FormContainer };
