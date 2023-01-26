@@ -1,6 +1,6 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { Login } from "../pages/Auth/Login";
-import { SignUp } from "../pages/Auth/Signup";
+import { SignUp } from "../pages/Auth/SignUp";
 import { Main } from "../pages/Main";
 import { MyPage } from "../pages/MyPage";
 import { Questions } from "../pages/Questions";
