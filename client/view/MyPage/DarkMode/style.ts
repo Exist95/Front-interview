@@ -1,7 +1,8 @@
 import styled from "styled-components/native";
 
 export const DarkMode = styled.Image`
-  width: 50px;
-  height: 50px;
-  background-color: red;
+  background-size: cover;
+  background-color: silver;
+  width: 100px;
+  height: 100px;
 `;

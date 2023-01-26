@@ -11,7 +11,7 @@ router.post(
   "/",
   [
     check("question").not().isEmpty(),
-    check("answer").isLength({ min: 10 }),
+    check("answer").not().isEmpty(),
     check("part").not().isEmpty(),
   ],
   questionCotroller.createQuestion
