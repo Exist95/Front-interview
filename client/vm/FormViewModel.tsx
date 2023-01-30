@@ -22,7 +22,7 @@ export const FormViewModel = () => {
   ) => {
     setPassword(e.nativeEvent.text);
   };
-
+  
   const onSubmitSignUp = () => {
     // mutateSignUp({
     //   name: userName,
