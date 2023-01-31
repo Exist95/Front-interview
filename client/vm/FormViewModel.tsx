@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { NativeSyntheticEvent, TextInputChangeEventData } from "react-native";
-import { mutateSignUp } from "../model/authModel";
 
 export const FormViewModel = () => {
   const [userName, setUserName] = useState("");
@@ -23,14 +22,6 @@ export const FormViewModel = () => {
     setPassword(e.nativeEvent.text);
   };
 
-  const onSubmitSignUp = () => {
-    // mutateSignUp({
-    //   name: userName,
-    //   email: email,
-    //   password: password,
-    // });
-  };
-
   return {
     userName,
     email,
@@ -38,6 +29,5 @@ export const FormViewModel = () => {
     onChangeUserName,
     onChangeEmail,
     onChangePassword,
-    onSubmitSignUp,
   };
 };
