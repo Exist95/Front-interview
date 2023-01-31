@@ -1,34 +1,23 @@
-import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { api } from ".";
+import { BASE_PATH } from "@env";
+import axios from "axios";
 import { ILoginForm, ILoginRes, ISignUpForm, ISignUpRes } from "../types/auth";
 
-const queryClient = useQueryClient();
-
 export const createAccount = async (formData: ISignUpForm) => {
-  const response = await api.post<ISignUpRes>("/api/users/signup", formData);
-  return response;
+  const response = await axios.post<ISignUpRes>(
+    `${BASE_PATH}/api/users/signup`,
+    {
+      name: formData.name,
+      email: formData.email,
+      password: formData.password,
+    }
+  );
+  return response.data;
 };
-
-export const { mutate: mutateSignUp } = useMutation(createAccount, {
-  onSuccess: (data) => {
-    console.log(data);
-    queryClient.invalidateQueries();
-  },
-  onError: (error) => {
-    console.log(error);
-  },
-});
 
 export const requestLogin = async (formData: ILoginForm) => {
-  const response = await api.post<ILoginRes>("/api/users/login", formData);
-  return response;
+  const response = await axios.post<ILoginRes>(
+    `${BASE_PATH}/api/users/login`,
+    formData
+  );
+  return response.data;
 };
-
-export const { mutate: mutateLogin } = useMutation(requestLogin, {
-  onSuccess: () => {
-    queryClient.invalidateQueries();
-  },
-  onError: (error) => {
-    console.log(error);
-  },
-});
