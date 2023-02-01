@@ -3,6 +3,7 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import React from "react";
 import { createAccount, requestLogin } from "../../../../model/authModel";
 import { INavigationButtonProps } from "../../../../types/NavigationButton";
+import { FormViewModel } from "../../../../vm/FormViewModel";
 import * as S from "./style";
 
 export const NavigationButton = ({
@@ -13,40 +14,47 @@ export const NavigationButton = ({
 }: INavigationButtonProps) => {
   const navigation = useNavigation<any>();
   const queryClient = useQueryClient();
+  const { userName, email, password, resetForm } = FormViewModel();
 
   const { mutate: mutateSignUp } = useMutation(createAccount, {
     onSuccess: (data) => {
-      alert("success!");
+      alert("회원가입에 성공했습니다!");
+      navigation.navigate(destination);
       console.log(data);
       queryClient.invalidateQueries();
     },
     onError: (error) => {
+      alert("회원가입에 실패했습니다.");
       console.log(error);
     },
   });
 
   const onSubmitSignUp = () => {
+    resetForm();
     mutateSignUp({
-      name: "hee",
-      email: "test@hee.com",
-      password: "heetest",
+      name: userName,
+      email: email,
+      password: password,
     });
   };
 
   const { mutate: mutateLogin } = useMutation(requestLogin, {
     onSuccess: (data) => {
+      navigation.navigate(destination);
       console.log(data);
       queryClient.invalidateQueries();
     },
     onError: (error) => {
+      alert("이메일 또는 비밀번호가 올바르지 않습니다.");
       console.log(error);
     },
   });
 
   const onSubmitLogin = () => {
+    resetForm();
     mutateLogin({
-      email: "test@hee.com",
-      password: "heetest",
+      email: email,
+      password: password,
     });
   };
 
@@ -57,8 +65,9 @@ export const NavigationButton = ({
           onSubmitSignUp();
         } else if (text === "로그인") {
           onSubmitLogin();
+        } else {
+          navigation.navigate(destination);
         }
-        navigation.navigate(destination);
       }}
     >
       <S.BtnText>{text}</S.BtnText>
