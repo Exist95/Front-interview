@@ -4,6 +4,7 @@ import React from "react";
 import { createAccount, requestLogin } from "../../../../model/authModel";
 import { INavigationButtonProps } from "../../../../types/NavigationButton";
 import { FormViewModel } from "../../../../vm/FormViewModel";
+import { LoginViewModel } from "../../../../vm/LoginViewModel";
 import * as S from "./style";
 
 export const NavigationButton = ({
@@ -15,6 +16,7 @@ export const NavigationButton = ({
   const navigation = useNavigation<any>();
   const queryClient = useQueryClient();
   const { userName, email, password, resetForm } = FormViewModel();
+  const { storeToken } = LoginViewModel();
 
   const { mutate: mutateSignUp } = useMutation(createAccount, {
     onSuccess: (data) => {
@@ -42,6 +44,7 @@ export const NavigationButton = ({
     onSuccess: (data) => {
       navigation.navigate(destination);
       console.log(data);
+      storeToken(data.token);
       queryClient.invalidateQueries();
     },
     onError: (error) => {
