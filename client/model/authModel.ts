@@ -17,3 +17,13 @@ export const requestLogin = async (formData: ILoginForm) => {
   );
   return response.data;
 };
+
+export const DeleteUser = async (id: string, token: string) => {
+  const response = await axios.delete(`${BASE_PATH}/api/users/${id}`, {
+    headers: {
+      "Content-Type": "multipart/form-data",
+      Authorization: `Bearer ${token}`,
+    },
+  });
+  return response.data;
+};

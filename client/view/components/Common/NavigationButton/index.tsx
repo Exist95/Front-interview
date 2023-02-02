@@ -1,7 +1,9 @@
 import { useNavigation } from "@react-navigation/native";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import React from "react";
+import { useRecoilState } from "recoil";
 import { createAccount, requestLogin } from "../../../../model/authModel";
+import { userIdState, usersToken } from "../../../../store/login";
 import { INavigationButtonProps } from "../../../../types/NavigationButton";
 import { FormViewModel } from "../../../../vm/FormViewModel";
 import { LoginViewModel } from "../../../../vm/LoginViewModel";
@@ -15,14 +17,15 @@ export const NavigationButton = ({
 }: INavigationButtonProps) => {
   const navigation = useNavigation<any>();
   const queryClient = useQueryClient();
-  const { userName, email, password, resetForm } = FormViewModel();
+  const { userName, email, password, resetForm, setUserId, setIsLogin } =
+    FormViewModel();
   const { storeToken } = LoginViewModel();
+  const [userToken, setUserToken] = useRecoilState(usersToken);
 
   const { mutate: mutateSignUp } = useMutation(createAccount, {
     onSuccess: (data) => {
       alert("회원가입에 성공했습니다!");
       navigation.navigate(destination);
-      console.log(data);
       queryClient.invalidateQueries();
     },
     onError: (error) => {
@@ -43,9 +46,12 @@ export const NavigationButton = ({
   const { mutate: mutateLogin } = useMutation(requestLogin, {
     onSuccess: (data) => {
       navigation.navigate(destination);
-      console.log(data);
+      console.log("ㅁㄴㅇㅁㄴ", data);
       storeToken(data.token);
       queryClient.invalidateQueries();
+      setUserId(data.userId);
+      setUserToken(data.token);
+      console.log("이거 토큰?", data.token);
     },
     onError: (error) => {
       alert("이메일 또는 비밀번호가 올바르지 않습니다.");

@@ -13,7 +13,7 @@ export const UserName = styled.Text`
   font-size: 40px;
   text-align: center;
   justify-content: center;
-  text-decoration: underline ${(props) => props.theme.textColor};
+  flex: 1;
 `;
 
 export const ButtonBox = styled.View`
@@ -27,8 +27,7 @@ export const Button = styled.View`
   background-color: silver;
   width: 150px;
   height: 150px;
-  margin-top: 100px;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   text-align: center;
 `;
