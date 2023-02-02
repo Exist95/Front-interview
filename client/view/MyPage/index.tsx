@@ -12,13 +12,15 @@ import {
 import { DarkMode } from "./DarkMode/index";
 import { useNavigation } from "@react-navigation/native";
 import * as S from "./style";
+import { LoginViewModel } from "../../vm/LoginViewModel";
 import { ModalBox } from "../../vm/Modal";
 
 export const MyPageTemp = () => {
-  const [isLogin, setIsLogin] = useState(true);
+  const { isLogin } = LoginViewModel();
   const { onClickModal, isModalVisible, setIsModalVisible } = ModalBox();
 
   const navigation = useNavigation<any>();
+
   return (
     <S.Container>
       {isLogin ? (

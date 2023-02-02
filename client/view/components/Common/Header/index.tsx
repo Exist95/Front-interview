@@ -1,11 +1,12 @@
 import { useNavigation } from "@react-navigation/native";
-import { useState } from "react";
 import { Pressable } from "react-native";
+import { LoginViewModel } from "../../../../vm/LoginViewModel";
 import * as S from "./style";
 
 export const Header = () => {
-  const [isLogin, setIsLogin] = useState(false);
+  const { isLogin } = LoginViewModel();
   const navigation = useNavigation<any>();
+
   return (
     <S.Container>
       <S.Logo

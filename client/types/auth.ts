@@ -27,3 +27,7 @@ export interface ILoginRes {
   email: string;
   token: string;
 }
+
+export interface IFormProps {
+  signup?: boolean;
+}
