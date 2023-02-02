@@ -3,10 +3,12 @@ import { Pressable } from "react-native";
 import { DarkMode } from "./DarkMode/index";
 import { useNavigation } from "@react-navigation/native";
 import * as S from "./style";
+import { LoginViewModel } from "../../vm/LoginViewModel";
 
 export const MyPageTemp = () => {
-  const [isLogin, setIsLogin] = useState(true);
+  const { isLogin } = LoginViewModel();
   const navigation = useNavigation<any>();
+
   return (
     <S.Container>
       {isLogin ? (

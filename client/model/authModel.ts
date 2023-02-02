@@ -5,11 +5,7 @@ import { ILoginForm, ILoginRes, ISignUpForm, ISignUpRes } from "../types/auth";
 export const createAccount = async (formData: ISignUpForm) => {
   const response = await axios.post<ISignUpRes>(
     `${BASE_PATH}/api/users/signup`,
-    {
-      name: formData.name,
-      email: formData.email,
-      password: formData.password,
-    }
+    formData
   );
   return response.data;
 };

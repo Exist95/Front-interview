@@ -1,3 +1,5 @@
+import { Login } from "../../pages/Auth/Login";
+import { LoginViewModel } from "../../vm/LoginViewModel";
 import { Header } from "../components/Common/Header";
 import { NoteList } from "./NoteList";
 import * as S from "./style";
@@ -11,16 +13,23 @@ const dummy = [
 ];
 
 export const NoteTemp = () => {
+  const { isLogin } = LoginViewModel();
   return (
-    <S.Container>
-      <Header />
-      <S.TextBox>
-        <S.NoteTitle>오답노트</S.NoteTitle>
-        <S.NotePoint>40/900</S.NotePoint>
-      </S.TextBox>
-      {dummy.map((item: any, i) => {
-        return <NoteList key={i} item={item} />;
-      })}
-    </S.Container>
+    <>
+      {isLogin ? (
+        <S.Container>
+          <Header />
+          <S.TextBox>
+            <S.NoteTitle>오답노트</S.NoteTitle>
+            <S.NotePoint>40/900</S.NotePoint>
+          </S.TextBox>
+          {dummy.map((item: any, i) => {
+            return <NoteList key={i} item={item} />;
+          })}
+        </S.Container>
+      ) : (
+        <Login />
+      )}
+    </>
   );
 };

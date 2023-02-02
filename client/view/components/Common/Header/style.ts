@@ -5,6 +5,7 @@ export const Container = styled.View`
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
+  position: fixed;
 `;
 
 export const Profile = styled.Image`

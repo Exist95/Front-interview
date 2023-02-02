@@ -1,11 +1,26 @@
+import { IFormProps } from "../../../types/auth";
 import { FormViewModel } from "../../../vm/FormViewModel";
 import * as S from "./style";
 
-export const Form = () => {
-  const { email, password, onChangeEmail, onChangePassword } = FormViewModel();
+export const Form = ({ signup }: IFormProps) => {
+  const {
+    userName,
+    email,
+    password,
+    onChangeUserName,
+    onChangeEmail,
+    onChangePassword,
+  } = FormViewModel();
 
   return (
     <>
+      {signup && (
+        <S.Input
+          value={userName}
+          placeholder="유저 이름을 입력해 주세요"
+          onChange={onChangeUserName}
+        />
+      )}
       <S.Input
         value={email}
         keyboardType={"email-address"}
