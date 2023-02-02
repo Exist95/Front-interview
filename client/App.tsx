@@ -1,7 +1,9 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { RecoilRoot } from "recoil";
-import { TabBar } from "./router/index";
+import { AuthNavigator } from "./router/AuthStack";
+import { StackNavigator } from "./router/Stack";
+import { LoginViewModel } from "./vm/LoginViewModel";
 
 const queryClient = new QueryClient();
 
@@ -10,7 +12,7 @@ export default function App() {
     <RecoilRoot>
       <QueryClientProvider client={queryClient}>
         <SafeAreaProvider>
-          <TabBar />
+          <StackNavigator />
         </SafeAreaProvider>
       </QueryClientProvider>
     </RecoilRoot>

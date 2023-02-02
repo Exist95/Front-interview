@@ -5,12 +5,14 @@ import { loginState } from "../store/login";
 export const LoginViewModel = () => {
   const [isLogin, setIsLogin] = useRecoilState(loginState);
 
-  const getData = async () => {
+  const getToken = async () => {
     try {
-      const value = await AsyncStorage.getItem("token");
-      if (value !== null) {
+      const token = await AsyncStorage.getItem("token");
+      if (token !== null) {
         setIsLogin(true);
+        return true;
       }
+      return false;
     } catch (e) {
       console.log(e);
     }
@@ -19,11 +21,11 @@ export const LoginViewModel = () => {
   const storeToken = async (token: string) => {
     try {
       await AsyncStorage.setItem("token", token);
-      getData();
+      getToken();
     } catch (e) {
       console.log(e);
     }
   };
 
-  return { isLogin, storeToken };
+  return { isLogin, storeToken, getToken };
 };

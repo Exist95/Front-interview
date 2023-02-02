@@ -1,5 +1,4 @@
 import { useNavigation } from "@react-navigation/native";
-import { useState } from "react";
 import { Pressable } from "react-native";
 import { LoginViewModel } from "../../../../vm/LoginViewModel";
 import * as S from "./style";
