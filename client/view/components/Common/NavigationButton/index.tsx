@@ -1,12 +1,14 @@
 import { useNavigation } from "@react-navigation/native";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import React from "react";
 import { useRecoilState } from "recoil";
 import { createAccount, requestLogin } from "../../../../model/authModel";
-import { userIdState, usersToken } from "../../../../store/login";
-import { INavigationButtonProps } from "../../../../types/NavigationButton";
+import { usersToken } from "../../../../store/login";
+import { getQuestions } from "../../../../model/questionsModel";
+import { INavigationButtonProps } from "../../../../types/navigationButton";
 import { FormViewModel } from "../../../../vm/FormViewModel";
 import { LoginViewModel } from "../../../../vm/LoginViewModel";
+import { QuestionsViewModel } from "../../../../vm/QuestionsViewModel";
 import * as S from "./style";
 
 export const NavigationButton = ({
@@ -20,6 +22,13 @@ export const NavigationButton = ({
   const { userName, email, password, resetForm, setUserId, setIsLogin } =
     FormViewModel();
   const { storeToken } = LoginViewModel();
+  const {
+    setQRandomNum,
+    setARandomNum,
+    selectARandomIndex,
+    selectQRandomIndex,
+    count,
+  } = QuestionsViewModel();
   const [userToken, setUserToken] = useRecoilState(usersToken);
 
   const { mutate: mutateSignUp } = useMutation(createAccount, {
@@ -46,7 +55,7 @@ export const NavigationButton = ({
   const { mutate: mutateLogin } = useMutation(requestLogin, {
     onSuccess: (data) => {
       navigation.navigate(destination);
-      console.log("ㅁㄴㅇㅁㄴ", data);
+      console.log(data);
       storeToken(data.token);
       queryClient.invalidateQueries();
       setUserId(data.userId);
@@ -67,6 +76,13 @@ export const NavigationButton = ({
     });
   };
 
+  const { isLoading, data } = useQuery(["AllQuestions"], getQuestions);
+
+  const startQuestion = () => {
+    setQRandomNum(selectQRandomIndex(data?.length, 10));
+    setARandomNum(selectARandomIndex(count - 1));
+  };
+
   return (
     <S.BtnContainer
       onPress={() => {
@@ -77,6 +93,7 @@ export const NavigationButton = ({
         } else {
           navigation.navigate(destination);
         }
+        if (destination === "Questions" && isLoading === false) startQuestion();
       }}
     >
       <S.BtnText>{text}</S.BtnText>

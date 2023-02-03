@@ -1,5 +1,5 @@
-import { IFormProps } from "../../../types/auth";
-import { FormViewModel } from "../../../vm/FormViewModel";
+import { IFormProps } from "../../../../types/auth";
+import { FormViewModel } from "../../../../vm/FormViewModel";
 import * as S from "./style";
 
 export const Form = ({ signup }: IFormProps) => {

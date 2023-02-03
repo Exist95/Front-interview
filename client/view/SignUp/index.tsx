@@ -1,6 +1,6 @@
 import { Container } from "../Questions/style";
 import * as S from "../Login/style";
-import { Form } from "../components/Form";
+import { Form } from "../components/Common/Form";
 import { NavigationButton } from "../components/Common/NavigationButton";
 import { Link } from "@react-navigation/native";
 

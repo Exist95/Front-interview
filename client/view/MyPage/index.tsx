@@ -6,11 +6,8 @@ import { LoginViewModel } from "../../vm/LoginViewModel";
 import { Header } from "../components/Common/Header";
 import { FormViewModel } from "../../vm/FormViewModel";
 import { DeleteUser, getUserName } from "../../model/authModel";
-import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
-import { BASE_PATH } from "@env";
-import { Login } from "../../pages/Auth/Login";
 import { useEffect, useState } from "react";
+import { NavigateLogin } from "../../pages/Auth/NavigateLogin";
 
 export const MyPageTemp = () => {
   const {
@@ -23,7 +20,6 @@ export const MyPageTemp = () => {
   } = LoginViewModel();
   const { userId } = FormViewModel();
   const [userNickName, setUserNickName] = useState("");
-
   const navigation = useNavigation<any>();
   useEffect(() => {
     getUserName(userId).then((res) => setUserNickName(res.user.name));
@@ -89,7 +85,7 @@ export const MyPageTemp = () => {
           </S.ButtonBox>
         </S.Container>
       ) : (
-        <Login />
+        <NavigateLogin />
       )}
     </>
   );

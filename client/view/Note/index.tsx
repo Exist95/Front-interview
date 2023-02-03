@@ -1,4 +1,5 @@
-import { Login } from "../../pages/Auth/Login";
+import { useEffect } from "react";
+import { NavigateLogin } from "../../pages/Auth/NavigateLogin";
 import { LoginViewModel } from "../../vm/LoginViewModel";
 import { Header } from "../components/Common/Header";
 import { NoteList } from "./NoteList";
@@ -13,7 +14,12 @@ const dummy = [
 ];
 
 export const NoteTemp = () => {
-  const { isLogin } = LoginViewModel();
+  const { isLogin, loginNavigate } = LoginViewModel();
+
+  useEffect(() => {
+    loginNavigate();
+  }, []);
+
   return (
     <>
       {isLogin ? (
@@ -28,7 +34,7 @@ export const NoteTemp = () => {
           })}
         </S.Container>
       ) : (
-        <Login />
+        <NavigateLogin />
       )}
     </>
   );

@@ -3,19 +3,17 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { ThemeProvider } from "styled-components/native";
 import { TabBar } from ".";
 import { Login } from "../pages/Auth/Login";
-import { SignUp } from "../pages/Auth/Signup";
+import { SignUp } from "../pages/Auth/SignUp";
 import { MyPage } from "../pages/MyPage";
 import { Questions } from "../pages/Questions";
 import Result from "../pages/Result";
 import { darkTheme, lightTheme } from "../theme/theme";
 import { DarkModeViewModel } from "../vm/DarkModeViewModel";
-import { LoginViewModel } from "../vm/LoginViewModel";
 
 const Stack = createNativeStackNavigator();
 
 export const StackNavigator = () => {
   const { theme } = DarkModeViewModel();
-  const { isLogin } = LoginViewModel();
 
   return (
     <ThemeProvider theme={theme ? darkTheme : lightTheme}>
