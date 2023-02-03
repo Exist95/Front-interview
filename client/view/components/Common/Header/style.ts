@@ -1,11 +1,12 @@
 import styled from "styled-components/native";
 
 export const Container = styled.View`
-  flex: 1;
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
+  display: flex;
   position: fixed;
+  flex: 1;
 `;
 
 export const Profile = styled.Image`

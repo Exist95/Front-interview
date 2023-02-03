@@ -15,6 +15,7 @@ const Stack = createNativeStackNavigator();
 
 export const StackNavigator = () => {
   const { theme } = DarkModeViewModel();
+  const { isLogin } = LoginViewModel();
 
   return (
     <ThemeProvider theme={theme ? darkTheme : lightTheme}>

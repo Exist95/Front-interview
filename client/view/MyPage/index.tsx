@@ -57,7 +57,7 @@ export const MyPageTemp = () => {
                             removeToken,
                             setUserId(""),
                             setUserToken("");
-                          navigation.navigate("Main");
+                          // navigation.navigate("Main");
                         },
                       },
                     ]
@@ -73,7 +73,10 @@ export const MyPageTemp = () => {
                     {
                       text: "확인",
                       onPress: () => {
-                        setIsLogin(false), setUserId(""), removeToken;
+                        setIsLogin(false),
+                          setUserId(""),
+                          removeToken,
+                          setUserToken("");
                       },
                     },
                   ])
