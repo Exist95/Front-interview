@@ -41,7 +41,7 @@ const BtnContainer = styled.View`
   align-items: center;
 `;
 
-const Answer = styled.TouchableOpacity`
+const Answer = styled.Pressable`
   background-color: rgba(0, 0, 0, 0.3);
   width: 45%;
   border-radius: 5px;

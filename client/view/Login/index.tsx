@@ -2,7 +2,7 @@ import { Link } from "@react-navigation/native";
 import { NavigationButton } from "../components/Common/NavigationButton";
 import { Container } from "../Questions/style";
 import * as S from "./style";
-import { Form } from "../components/Form";
+import { Form } from "../components/Common/Form";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 
 export const LoginTemp = () => {

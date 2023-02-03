@@ -1,10 +1,12 @@
 import { useNavigation } from "@react-navigation/native";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import React from "react";
 import { createAccount, requestLogin } from "../../../../model/authModel";
+import { getQuestions } from "../../../../model/questionsModel";
 import { INavigationButtonProps } from "../../../../types/NavigationButton";
 import { FormViewModel } from "../../../../vm/FormViewModel";
 import { LoginViewModel } from "../../../../vm/LoginViewModel";
+import { QuestionsViewModel } from "../../../../vm/QuestionsViewModel";
 import * as S from "./style";
 
 export const NavigationButton = ({
@@ -17,6 +19,13 @@ export const NavigationButton = ({
   const queryClient = useQueryClient();
   const { userName, email, password, resetForm } = FormViewModel();
   const { storeToken } = LoginViewModel();
+  const {
+    setQRandomNum,
+    setARandomNum,
+    selectARandomIndex,
+    selectQRandomIndex,
+    count,
+  } = QuestionsViewModel();
 
   const { mutate: mutateSignUp } = useMutation(createAccount, {
     onSuccess: (data) => {
@@ -61,6 +70,13 @@ export const NavigationButton = ({
     });
   };
 
+  const { isLoading, data } = useQuery(["AllQuestions"], getQuestions);
+
+  const startQuestion = () => {
+    setQRandomNum(selectQRandomIndex(data?.length, 10));
+    setARandomNum(selectARandomIndex(count - 1));
+  };
+
   return (
     <S.BtnContainer
       onPress={() => {
@@ -71,6 +87,7 @@ export const NavigationButton = ({
         } else {
           navigation.navigate(destination);
         }
+        if (destination === "Questions" && isLoading === false) startQuestion();
       }}
     >
       <S.BtnText>{text}</S.BtnText>

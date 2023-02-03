@@ -1,9 +1,11 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { useNavigation } from "@react-navigation/native";
 import { useRecoilState } from "recoil";
 import { loginState } from "../store/login";
 
 export const LoginViewModel = () => {
   const [isLogin, setIsLogin] = useRecoilState(loginState);
+  const navigation = useNavigation<any>();
 
   const getToken = async () => {
     try {
@@ -27,5 +29,9 @@ export const LoginViewModel = () => {
     }
   };
 
-  return { isLogin, storeToken, getToken };
+  const loginNavigate = () => {
+    if (!isLogin) navigation.navigate("Login");
+  };
+
+  return { isLogin, storeToken, getToken, loginNavigate };
 };
