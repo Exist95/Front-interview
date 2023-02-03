@@ -9,7 +9,7 @@ const LoginTitle = styled.Text`
 
 const LoginText = styled.Text`
   color: ${(props) => props.theme.textColor};
-  margin-top: 60;
+  margin-top: 60px;
 `;
 
 export { LoginTitle, LoginText };

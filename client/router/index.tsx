@@ -3,7 +3,6 @@ import { Note } from "../pages/Note";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ranking } from "../pages/Ranking";
 import { MyPage } from "../pages/MyPage";
-import Result from "../pages/Result";
 import { Main } from "../pages/Main";
 
 const Tab = createBottomTabNavigator();

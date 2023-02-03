@@ -1,10 +1,12 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useNavigation } from "@react-navigation/native";
 import { useRecoilState } from "recoil";
-import { loginState } from "../store/login";
+import { loginState, userIdState, usersToken } from "../store/login";
 
 export const LoginViewModel = () => {
   const [isLogin, setIsLogin] = useRecoilState(loginState);
+  const [userId, setUserId] = useRecoilState(userIdState);
+  const [userToken, setUserToken] = useRecoilState(usersToken);
   const navigation = useNavigation<any>();
 
   const getToken = async () => {
@@ -33,5 +35,22 @@ export const LoginViewModel = () => {
     if (!isLogin) navigation.navigate("Login");
   };
 
-  return { isLogin, storeToken, getToken, loginNavigate };
+  const removeToken = async (token: string) => {
+    try {
+      await AsyncStorage.removeItem("token");
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+  return {
+    isLogin,
+    storeToken,
+    setIsLogin,
+    setUserId,
+    removeToken,
+    userToken,
+    setUserToken,
+    loginNavigate,
+  };
 };

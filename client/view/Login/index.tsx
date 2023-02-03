@@ -4,6 +4,7 @@ import { Container } from "../Questions/style";
 import * as S from "./style";
 import { Form } from "../components/Common/Form";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
+import { TabBar } from "../../router";
 
 export const LoginTemp = () => {
   return (
