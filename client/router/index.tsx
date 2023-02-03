@@ -10,6 +10,7 @@ import { ThemeProvider } from "styled-components/native";
 import { darkTheme, lightTheme } from "../theme/theme";
 import { DarkModeViewModel } from "../vm/DarkModeViewModel";
 import { Main } from "../pages/Main";
+import { Login } from "../pages/Auth/Login";
 
 const Tab = createBottomTabNavigator();
 

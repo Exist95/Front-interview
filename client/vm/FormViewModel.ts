@@ -1,11 +1,14 @@
 import { NativeSyntheticEvent, TextInputChangeEventData } from "react-native";
 import { useRecoilState } from "recoil";
 import { emailState, passwordState, userNameState } from "../store/form";
+import { loginState, userIdState } from "../store/login";
 
 export const FormViewModel = () => {
   const [userName, setUserName] = useRecoilState(userNameState);
   const [email, setEmail] = useRecoilState(emailState);
   const [password, setPassword] = useRecoilState(passwordState);
+  const [userId, setUserId] = useRecoilState(userIdState);
+  const [isLogin, setIsLogin] = useRecoilState(loginState);
 
   const onChangeUserName = (
     e: NativeSyntheticEvent<TextInputChangeEventData>
@@ -37,5 +40,8 @@ export const FormViewModel = () => {
     onChangeEmail,
     onChangePassword,
     resetForm,
+    setUserId,
+    userId,
+    setIsLogin,
   };
 };
