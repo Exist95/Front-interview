@@ -8,7 +8,7 @@ import {
   scoreState,
   wrongAnswersArrState,
 } from "../store/questions";
-import { IQuestionRes } from "../types/Questions";
+import { IQuestionRes } from "../types/questions";
 
 export const QuestionsViewModel = () => {
   const [count, setCount] = useRecoilState(countState);

@@ -5,7 +5,7 @@ import { useRecoilState } from "recoil";
 import { createAccount, requestLogin } from "../../../../model/authModel";
 import { usersToken } from "../../../../store/login";
 import { getQuestions } from "../../../../model/questionsModel";
-import { INavigationButtonProps } from "../../../../types/NavigationButton";
+import { INavigationButtonProps } from "../../../../types/navigationButton";
 import { FormViewModel } from "../../../../vm/FormViewModel";
 import { LoginViewModel } from "../../../../vm/LoginViewModel";
 import { QuestionsViewModel } from "../../../../vm/QuestionsViewModel";

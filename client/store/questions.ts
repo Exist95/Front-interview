@@ -1,5 +1,5 @@
 import { atom } from "recoil";
-import { IQuestionRes, IWrongAnswer } from "../types/Questions";
+import { IQuestionRes, IWrongAnswer } from "../types/questions";
 
 export const countState = atom<number>({
   key: "countState",

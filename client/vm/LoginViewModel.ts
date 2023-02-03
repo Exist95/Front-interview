@@ -49,6 +49,7 @@ export const LoginViewModel = () => {
     setIsLogin,
     setUserId,
     removeToken,
+    userId,
     userToken,
     setUserToken,
     loginNavigate,
