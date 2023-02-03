@@ -1,4 +1,5 @@
 import { BASE_PATH } from "@env";
+import { useNavigation } from "@react-navigation/native";
 import axios from "axios";
 import { ILoginForm, ILoginRes, ISignUpForm, ISignUpRes } from "../types/auth";
 
@@ -25,5 +26,10 @@ export const DeleteUser = async (id: string, token: string) => {
       Authorization: `Bearer ${token}`,
     },
   });
+  return response.data;
+};
+
+export const getUserName = async (id: string) => {
+  const response = await axios.get(`${BASE_PATH}/api/users/${id}`);
   return response.data;
 };

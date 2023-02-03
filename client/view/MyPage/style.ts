@@ -74,3 +74,9 @@ export const ModalTouchableOpacity = styled.TouchableOpacity`
   margin-top: 30px;
   margin-bottom: 30px;
 `;
+
+export const LoadingSpinner = styled.ActivityIndicator`
+  flex: 1;
+  justify-content: center;
+  background-color: ${(props) => props.theme.bgColor};
+`;
