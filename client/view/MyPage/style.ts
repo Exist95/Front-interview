@@ -24,7 +24,7 @@ export const ButtonBox = styled.View`
 `;
 
 export const Button = styled.View`
-  background-color: silver;
+  background-color: #ebb5b4;
   width: 150px;
   height: 150px;
   justify-content: space-evenly;
@@ -69,7 +69,7 @@ export const ModalContentsBox = styled.Text`
 
 export const ModalTouchableOpacity = styled.TouchableOpacity`
   padding: 10px;
-  background-color: #4852c7;
+  background-color: ${(props) => props.theme.buttonColor};
   border-radius: 7px;
   margin-top: 30px;
   margin-bottom: 30px;
@@ -79,4 +79,8 @@ export const LoadingSpinner = styled.ActivityIndicator`
   flex: 1;
   justify-content: center;
   background-color: ${(props) => props.theme.bgColor};
+`;
+
+export const ButtonText = styled.Text`
+  color: ${(props) => props.theme.textColor};
 `;
