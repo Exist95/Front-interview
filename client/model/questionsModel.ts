@@ -12,7 +12,7 @@ export const patchResult = async (params: IResultParams) => {
     `${BASE_PATH}/api/users/${params.id}`,
     {
       totalPoint: params.totalPoint,
-      wronganswer: params.wrongAnswer,
+      wrongAnswer: params.wrongAnswer,
     },
     {
       headers: {

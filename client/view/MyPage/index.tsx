@@ -27,8 +27,6 @@ export const MyPageTemp = () => {
     return;
   }, []);
 
-  //탈퇴를 하면 여전히 useQuery 데이터가 남아있는 문제가 발생 && 화면 전환 안 됨.
-
   return (
     <>
       {isLogin ? (

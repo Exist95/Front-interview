@@ -95,7 +95,6 @@ const updateUser = async (req, res, next) => {
   }
 
   let prePoint = user.totalPoint;
-  console.log(prePoint);
 
   if (!totalPoint) {
     user.password = password;
@@ -110,7 +109,7 @@ const updateUser = async (req, res, next) => {
     }
   } else if (totalPoint && wrongAnswer) {
     user.totalPoint = prePoint + totalPoint;
-    user.wrongAnswer = [...user.wrongAnswer, wrongAnswer];
+    user.wrongAnswer = [...user.wrongAnswer, ...wrongAnswer];
     try {
       await user.save();
     } catch {
