@@ -94,6 +94,8 @@ const updateUser = async (req, res, next) => {
     return next(error);
   }
 
+  let prePoint = user.totalPoint;
+
   if (!totalPoint) {
     user.password = password;
 
@@ -102,43 +104,42 @@ const updateUser = async (req, res, next) => {
     } catch {
       const error = res
         .status(500)
-        .json({ message: "Something went wrong, could not update password" });
+        .json({ message: "Something went wrong, could not update" });
       return next(error);
     }
   } else if (totalPoint && wrongAnswer) {
-    user.totalPoint = totalPoint;
-    user.wrongAnswer.push(wrongAnswer);
-
+    user.totalPoint = prePoint + totalPoint;
+    user.wrongAnswer = [...user.wrongAnswer, ...wrongAnswer];
     try {
       await user.save();
     } catch {
       const error = res
         .status(500)
-        .json({ message: "Something went wrong, could not update totalPoint" });
+        .json({ message: "Something went wrong, could not update" });
       return next(error);
     }
-  } else if (totalPoint && !password && !wrongAnswer) {
-    user.totalPoint = totalPoint;
-    try {
-      await user.save();
-    } catch {
-      const error = res
-        .status(500)
-        .json({ message: "Something went wrong, could not update totalPoint" });
-      return next(error);
-    }
-  } else if (!totalPoint && !password && wrongAnswer) {
-    user.wrongAnswer.push(wrongAnswer);
-    try {
-      await user.save();
-    } catch {
-      const error = res
-        .status(500)
-        .json({
-          message: "Something went wrong, could not update wrongAnswer",
-        });
-      return next(error);
-    }
+    // } else if (totalPoint && !password && !wrongAnswer) {
+    //   user.totalPoint = totalPoint;
+    //   try {
+    //     await user.save();
+    //   } catch {
+    //     const error = res
+    //       .status(500)
+    //       .json({ message: "Something went wrong, could not update totalPoint" });
+    //     return next(error);
+    //   }
+    // } else if (!totalPoint && !password && wrongAnswer) {
+    //   user.wrongAnswer.push(wrongAnswer);
+    //   try {
+    //     await user.save();
+    //   } catch {
+    //     const error = res
+    //       .status(500)
+    //       .json({
+    //         message: "Something went wrong, could not update wrongAnswer",
+    //       });
+    //     return next(error);
+    //   }
   }
 
   res.status(201).json({ message: "The user was successfully changed." });
