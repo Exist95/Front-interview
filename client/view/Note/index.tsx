@@ -12,30 +12,35 @@ export const NoteTemp = () => {
   const { isLogin, loginNavigate } = LoginViewModel();
   const { userId } = FormViewModel();
   const [userWrongAnswer, setUserWrongAnswers] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    loginNavigate();
-    getUserName(userId).then((res) =>
-      setUserWrongAnswers(res.user.wrongAnswer)
-    );
+    if (isLogin) {
+      loginNavigate();
+      getUserName(userId).then((res) => {
+        setUserWrongAnswers(res.user.wrongAnswer), setIsLoading(false);
+      });
+    }
   }, []);
 
   return (
     <>
       {isLogin ? (
-        <S.Container>
-          <Header />
-          <S.TextBox>
-            <S.NoteTitle>오답노트</S.NoteTitle>
-            <S.NotePoint>40/900</S.NotePoint>
-          </S.TextBox>
-
-          <S.NoteTable>
-            {userWrongAnswer.map((item: any, i) => {
-              return <NoteList key={i} item={item} />;
-            })}
-          </S.NoteTable>
-        </S.Container>
+        !isLoading ? (
+          <S.Container>
+            <S.TextBox>
+              <S.NoteTitle>오답노트</S.NoteTitle>
+              <S.NotePoint>{userWrongAnswer.length}</S.NotePoint>
+            </S.TextBox>
+            <S.NoteTable>
+              {userWrongAnswer.map((item: any, i) => {
+                return <NoteList key={i} item={item} />;
+              })}
+            </S.NoteTable>
+          </S.Container>
+        ) : (
+          <S.LoadingSpinner />
+        )
       ) : (
         <NavigateLogin />
       )}

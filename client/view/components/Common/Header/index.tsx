@@ -13,11 +13,7 @@ export const Header = () => {
         source={require("../../../../assets/fterview_icon-removebg-preview.png")}
       />
       {isLogin ? (
-        <Pressable
-          onPress={() => {
-            navigation.navigate("MyPage");
-          }}
-        >
+        <Pressable>
           <S.Profile source={require("../../../../assets/User.png")} />
         </Pressable>
       ) : (

@@ -17,12 +17,16 @@ export const RankingTitle = styled.Text`
 `;
 
 export const RankingTable = styled.View`
-  border: 2px solid ${(props) => props.theme.textColor};
   width: 300px;
   height: 400px;
-  overflow-y: scroll;
 `;
 
 export const RankingRankBox = styled.View`
   color: ${(props) => props.theme.textColor};
+`;
+
+export const LoadingSpinner = styled.ActivityIndicator`
+  flex: 1;
+  justify-content: center;
+  background-color: ${(props) => props.theme.bgColor};
 `;
