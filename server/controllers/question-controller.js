@@ -24,9 +24,10 @@ const getQuestion = async (req, res, next) => {
 const createQuestion = async (req, res, next) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
-    return next(
-      new HttpError("Invalid inputs passed, please check your data.", 422)
-    );
+    const error = res
+      .status(422)
+      .json({ message: "Invalid inputs passed, please check your data." });
+    return next(error);
   }
 
   const { question, answer, part } = req.body;

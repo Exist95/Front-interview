@@ -117,6 +117,28 @@ const updateUser = async (req, res, next) => {
         .json({ message: "Something went wrong, could not update totalPoint" });
       return next(error);
     }
+  } else if (totalPoint && !password && !wrongAnswer) {
+    user.totalPoint = totalPoint;
+    try {
+      await user.save();
+    } catch {
+      const error = res
+        .status(500)
+        .json({ message: "Something went wrong, could not update totalPoint" });
+      return next(error);
+    }
+  } else if (!totalPoint && !password && wrongAnswer) {
+    user.wrongAnswer.push(wrongAnswer);
+    try {
+      await user.save();
+    } catch {
+      const error = res
+        .status(500)
+        .json({
+          message: "Something went wrong, could not update wrongAnswer",
+        });
+      return next(error);
+    }
   }
 
   res.status(201).json({ message: "The user was successfully changed." });
