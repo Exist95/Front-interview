@@ -26,7 +26,7 @@ export const ResultTemp = () => {
     loginNavigate();
     mutateResult({
       id: userId,
-      totalPoint: String(score),
+      totalPoint: score,
       wrongAnswer: wrongAnswersArr,
       userToken: userToken,
     });
