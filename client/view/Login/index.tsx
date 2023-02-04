@@ -4,7 +4,6 @@ import { Container } from "../Questions/style";
 import * as S from "./style";
 import { Form } from "../components/Common/Form";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
-import { TabBar } from "../../router";
 
 export const LoginTemp = () => {
   return (
@@ -22,7 +21,12 @@ export const LoginTemp = () => {
         color={"#232323"}
         name="key-variant"
       /> */}
+      <S.SubManuBox>
+        <S.SaveId>아이디 저장</S.SaveId>
+        <S.ChangePassword>비밀번호 변경</S.ChangePassword>
+      </S.SubManuBox>
       <NavigationButton text="로그인" destination="Main" />
+
       <S.LoginText>
         계정이 없으신가요?{" "}
         <Link style={{ color: "#f1b1bb" }} to="/SignUp">
