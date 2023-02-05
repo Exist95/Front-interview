@@ -18,3 +18,15 @@ export const usersToken = atom({
   default: "",
   effects_UNSTABLE: [ReactNativeRecoilPersist.persistAtom],
 });
+
+export const savedEmail = atom({
+  key: "savedEmail",
+  default: false,
+  effects_UNSTABLE: [ReactNativeRecoilPersist.persistAtom],
+});
+
+export const savedEmailValue = atom({
+  key: "savedEmailValue",
+  default: "",
+  effects_UNSTABLE: [ReactNativeRecoilPersist.persistAtom],
+});

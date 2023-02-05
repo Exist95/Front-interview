@@ -4,8 +4,29 @@ import { Container } from "../Questions/style";
 import * as S from "./style";
 import { Form } from "../components/Common/Form";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
+import BouncyCheckbox from "react-native-bouncy-checkbox";
+import { DarkModeViewModel } from "../../vm/DarkModeViewModel";
+import { LoginViewModel } from "../../vm/LoginViewModel";
+import { useEffect } from "react";
+
 
 export const LoginTemp = () => {
+  const { theme } = DarkModeViewModel();
+  const {
+    EmailSaveCheck,
+    isEmailSave,
+    emailSaveValue,
+    setEmail,
+    SetIsEmailSave,
+  } = LoginViewModel();
+
+  useEffect(() => {
+    if (emailSaveValue !== "") {
+      setEmail(emailSaveValue);
+      SetIsEmailSave(true);
+    }
+  }, []);
+
   return (
     <Container style={{ justifyContent: "center" }}>
       <S.LoginTitle>Login</S.LoginTitle>
@@ -22,7 +43,17 @@ export const LoginTemp = () => {
         name="key-variant"
       /> */}
       <S.SubManuBox>
-        <S.SaveId>아이디 저장</S.SaveId>
+        <BouncyCheckbox
+          isChecked={isEmailSave}
+          fillColor="#f1b1bb"
+          text="이메일 저장"
+          iconStyle={{ borderColor: "#f1b1bb" }}
+          textStyle={{
+            textDecorationLine: "none",
+            color: theme ? "white" : "black",
+          }}
+          onPress={(e) => EmailSaveCheck(e)}
+        />
         <S.ChangePassword>비밀번호 변경</S.ChangePassword>
       </S.SubManuBox>
       <NavigationButton text="로그인" destination="Main" />
