@@ -3,7 +3,6 @@ import styled from "styled-components/native";
 export const ListBox = styled.View`
   width: 100%;
   border: 1px solid ${(props) => props.theme.textColor};
-  height: 100px;
   justify-content: center;
   align-items: center;
 `;

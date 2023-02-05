@@ -24,6 +24,14 @@ export const NoteTitle = styled.Text`
 export const NotePoint = styled.Text`
   font-size: 20px;
   font-weight: 800;
-
   color: ${(props) => props.theme.textColor};
 `;
+
+export const NoteTable = styled.ScrollView`
+  border: 2px solid ${(props) => props.theme.textColor};
+  width: 300px;
+  height: 100%;
+  box-sizing: content-box;
+`;
+
+export const ListQuestionScrollView = styled.ScrollView``;
