@@ -20,6 +20,7 @@ const SubManuBox = styled.View`
   margin-bottom: 10px;
   width: 100%;
 `;
+
 const SaveIdBox = styled.View``;
 const SaveId = styled.Text``;
 const checkBox = styled.TextInput``;

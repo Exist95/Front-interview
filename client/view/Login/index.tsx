@@ -9,6 +9,7 @@ import { DarkModeViewModel } from "../../vm/DarkModeViewModel";
 import { LoginViewModel } from "../../vm/LoginViewModel";
 import { useEffect } from "react";
 
+
 export const LoginTemp = () => {
   const { theme } = DarkModeViewModel();
   const {
@@ -53,7 +54,6 @@ export const LoginTemp = () => {
           }}
           onPress={(e) => EmailSaveCheck(e)}
         />
-
         <S.ChangePassword>비밀번호 변경</S.ChangePassword>
       </S.SubManuBox>
       <NavigationButton text="로그인" destination="Main" />
