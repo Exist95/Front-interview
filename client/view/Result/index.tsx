@@ -14,13 +14,8 @@ export const ResultTemp = () => {
   const [userNickName, setUserNickName] = useState("");
   const { score, wrongAnswersArr } = QuestionsViewModel();
   const { mutate: mutateResult } = useMutation(patchResult, {
-    onSuccess: (data) => {
-      alert("패치 성공");
-      console.log(data);
-    },
     onError: (error) => {
-      alert("패치 실패");
-      console.log(error);
+      alert("문제가 발생했습니다. 다시 시도해 주세요.");
     },
   });
 

@@ -71,7 +71,7 @@ export const ModalTouchableOpacity = styled.TouchableOpacity`
   padding: 10px;
   background-color: ${(props) => props.theme.buttonColor};
   border-radius: 7px;
-  margin-top: 30px;
+
   margin-bottom: 30px;
 `;
 
@@ -83,4 +83,11 @@ export const LoadingSpinner = styled.ActivityIndicator`
 
 export const ButtonText = styled.Text`
   color: ${(props) => props.theme.textColor};
+`;
+
+export const PasswordChangeBtn = styled(ModalTouchableOpacity)`
+  margin-bottom: 20%;
+  width: 30%;
+  justify-content: center;
+  align-items: center;
 `;
