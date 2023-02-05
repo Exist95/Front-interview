@@ -78,5 +78,6 @@ export const FormViewModel = () => {
     resetForm,
     setUserId,
     setIsLogin,
+    setEmail,
   };
 };

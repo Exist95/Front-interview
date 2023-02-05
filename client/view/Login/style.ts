@@ -21,7 +21,8 @@ const SubManuBox = styled.View`
   width: 100%;
 `;
 
+const SaveIdBox = styled.View``;
 const SaveId = styled.Text``;
-const ChangePassword = styled.Text``;
+const checkBox = styled.TextInput``;
 
-export { LoginTitle, LoginText, SubManuBox, SaveId, ChangePassword };
+export { LoginTitle, LoginText, SubManuBox, SaveId, SaveIdBox, checkBox };
