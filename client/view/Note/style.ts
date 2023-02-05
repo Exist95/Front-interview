@@ -27,6 +27,7 @@ export const NotePoint = styled.Text`
 `;
 
 export const NoteTable = styled.ScrollView`
+
   gap: 10px;
   width: 300px;
   height: 1000px;
@@ -39,3 +40,8 @@ export const LoadingSpinner = styled.ActivityIndicator`
   justify-content: center;
   background-color: ${(props) => props.theme.bgColor};
 `;
+
+
+
+
+
