@@ -1,14 +1,13 @@
 import { Link } from "@react-navigation/native";
 import { NavigationButton } from "../components/Common/NavigationButton";
 import { Container } from "../Questions/style";
+import { useEffect } from "react";
 import * as S from "./style";
 import { Form } from "../components/Common/Form";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import BouncyCheckbox from "react-native-bouncy-checkbox";
 import { DarkModeViewModel } from "../../vm/DarkModeViewModel";
 import { LoginViewModel } from "../../vm/LoginViewModel";
-import { useEffect } from "react";
-
 
 export const LoginTemp = () => {
   const { theme } = DarkModeViewModel();
@@ -52,12 +51,10 @@ export const LoginTemp = () => {
             textDecorationLine: "none",
             color: theme ? "white" : "black",
           }}
-          onPress={(e) => EmailSaveCheck(e)}
+          onPress={(e: any) => EmailSaveCheck(e)}
         />
-        <S.ChangePassword>비밀번호 변경</S.ChangePassword>
       </S.SubManuBox>
       <NavigationButton text="로그인" destination="Main" />
-
       <S.LoginText>
         계정이 없으신가요?{" "}
         <Link style={{ color: "#f1b1bb" }} to="/SignUp">

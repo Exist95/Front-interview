@@ -3,8 +3,16 @@ import * as S from "../Login/style";
 import { Form } from "../components/Common/Form";
 import { NavigationButton } from "../components/Common/NavigationButton";
 import { Link } from "@react-navigation/native";
+import { FormViewModel } from "../../vm/FormViewModel";
+import { useEffect } from "react";
 
 export const SignUpTemp = () => {
+  const { resetForm } = FormViewModel();
+
+  useEffect(() => {
+    resetForm();
+  }, []);
+
   return (
     <Container style={{ justifyContent: "center" }}>
       <S.LoginTitle>Sign Up</S.LoginTitle>
