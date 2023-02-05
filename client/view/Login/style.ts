@@ -24,4 +24,14 @@ const SaveIdBox = styled.View``;
 const SaveId = styled.Text``;
 const checkBox = styled.TextInput``;
 
-export { LoginTitle, LoginText, SubManuBox, SaveId, SaveIdBox, checkBox };
+const ChangePassword = styled.Text``;
+
+export {
+  LoginTitle,
+  LoginText,
+  SubManuBox,
+  SaveId,
+  ChangePassword,
+  SaveIdBox,
+  checkBox,
+};
