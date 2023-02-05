@@ -12,4 +12,16 @@ const LoginText = styled.Text`
   margin-top: 60px;
 `;
 
-export { LoginTitle, LoginText };
+const SubManuBox = styled.View`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 10px;
+  margin-bottom: 10px;
+  width: 100%;
+`;
+
+const SaveId = styled.Text``;
+const ChangePassword = styled.Text``;
+
+export { LoginTitle, LoginText, SubManuBox, SaveId, ChangePassword };

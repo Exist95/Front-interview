@@ -10,4 +10,18 @@ const Input = styled.TextInput`
   position: relative;
 `;
 
-export { Input };
+const FormText = styled.Text`
+  color: ${(props) => props.theme.textColor};
+  padding-left: 2%;
+  margin-bottom: 4%;
+  margin-top: 1%;
+  width: 100%;
+`;
+
+const Invalid = styled.View`
+  margin-bottom: 4%;
+  margin-top: 1%;
+  width: 100%;
+`;
+
+export { Input, FormText, Invalid };

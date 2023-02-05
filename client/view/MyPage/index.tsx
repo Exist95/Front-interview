@@ -7,6 +7,7 @@ import { FormViewModel } from "../../vm/FormViewModel";
 import { DeleteUser, getUserName } from "../../model/authModel";
 import { useEffect, useState } from "react";
 import { NavigateLogin } from "../../pages/Auth/NavigateLogin";
+import { useNavigation } from "@react-navigation/native";
 
 export const MyPageTemp = () => {
   const {
@@ -19,6 +20,7 @@ export const MyPageTemp = () => {
   } = LoginViewModel();
   const { userId } = FormViewModel();
   const [userNickName, setUserNickName] = useState("");
+  const navigation = useNavigation<any>();
 
   useEffect(() => {
     if (isLogin) {
@@ -33,6 +35,13 @@ export const MyPageTemp = () => {
         <S.Container>
           <Header />
           <S.UserName>{userNickName}</S.UserName>
+          <S.PasswordChangeBtn
+            onPress={() => {
+              navigation.navigate("Password");
+            }}
+          >
+            <S.ButtonText>비밀번호 변경</S.ButtonText>
+          </S.PasswordChangeBtn>
           <S.ButtonBox>
             <S.Button>
               <DarkMode />
