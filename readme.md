@@ -12,17 +12,28 @@
 
 널리 알려진 프론트엔드 주니어 개발자를 위한 기술면접 리스트를 반영하여 암기의 틀을 제공하고 틀린 문제를 오답노트에서 마주하여 복습해 보아요.
 
-## 팀원 소개
+## 🙋‍♀️ 팀원 소개
 
 |[노종열](https://github.com/Exist95)|[홍다희](https://github.com/hongdahee)|
 |:---:|:---:|
 |:FULL|:FRONT|
 |<img src="https://avatars.githubusercontent.com/u/96723716?v=4" width="100">|<img src="https://avatars.githubusercontent.com/u/107875003?v=4" width="100">|
 
-## 스택
-FRONT: TypeScript, React-Native, React-Query, Styled-components, Recoil, Axios
-</br>
-BACK: JavaScript, Node.js, Express, MongoDB, GCP
+## 🌟 스택
+![image](https://user-images.githubusercontent.com/96723716/217108019-5aa27511-30e5-4973-a4e7-aa25de5ec771.png)
+
+## 👟 실행 방법
+### 코드 실행 방법
+
+```bash
+#FE
+npm install
+npm start
+
+#BE
+npm
+npm start
+```
 
 ## 기술시연
 |                   메인 & 비로그인 시 화면                 |                   회원가입                    |                         로그인                         |
