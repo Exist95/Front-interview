@@ -53,7 +53,6 @@ export const LoginTemp = () => {
           }}
           onPress={(e: any) => EmailSaveCheck(e)}
         />
-        <S.ChangePassword>비밀번호 변경</S.ChangePassword>
       </S.SubManuBox>
       <NavigationButton text="로그인" destination="Main" />
 
