@@ -43,11 +43,11 @@ export const MyPageTemp = () => {
             <S.ButtonText>비밀번호 변경</S.ButtonText>
           </S.PasswordChangeBtn>
           <S.ButtonBox>
-            <S.Button>
+            <S.DarkModeButton>
               <DarkMode />
-            </S.Button>
-            <S.Button>
-              <S.ModalTouchableOpacity
+            </S.DarkModeButton>
+            <S.UserButtons>
+              <S.TouchableOpacity
                 onPress={() =>
                   Alert.alert("로그아웃 재확인?", "로그아웃 하시겠습니까?", [
                     { text: "취소" },
@@ -64,8 +64,8 @@ export const MyPageTemp = () => {
                 }
               >
                 <S.ButtonText>로그아웃</S.ButtonText>
-              </S.ModalTouchableOpacity>
-              <S.ModalTouchableOpacity
+              </S.TouchableOpacity>
+              <S.TouchableOpacity
                 onPress={() =>
                   Alert.alert(
                     "탈퇴 재확인",
@@ -87,8 +87,8 @@ export const MyPageTemp = () => {
                 }
               >
                 <S.ButtonText>탈퇴하기</S.ButtonText>
-              </S.ModalTouchableOpacity>
-            </S.Button>
+              </S.TouchableOpacity>
+            </S.UserButtons>
           </S.ButtonBox>
         </S.Container>
       ) : (

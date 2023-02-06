@@ -55,6 +55,7 @@ export const LoginTemp = () => {
         />
       </S.SubManuBox>
       <NavigationButton text="로그인" destination="Main" />
+
       <S.LoginText>
         계정이 없으신가요?{" "}
         <Link style={{ color: "#f1b1bb" }} to="/SignUp">
