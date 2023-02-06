@@ -9,7 +9,7 @@ import { Questions } from "../pages/Questions";
 import Result from "../pages/Result";
 import { darkTheme, lightTheme } from "../theme/theme";
 import { DarkModeViewModel } from "../vm/DarkModeViewModel";
-import { SignUp } from "../pages/Auth/Signup";
+import { SignUp } from "../pages/Auth/SignUp";
 const Stack = createNativeStackNavigator();
 
 export const StackNavigator = () => {
