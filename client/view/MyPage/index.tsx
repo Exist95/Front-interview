@@ -7,6 +7,7 @@ import { FormViewModel } from "../../vm/FormViewModel";
 import { DeleteUser, getUserName } from "../../model/authModel";
 import { useEffect, useState } from "react";
 import { NavigateLogin } from "../../pages/Auth/NavigateLogin";
+import { useNavigation } from "@react-navigation/native";
 
 export const MyPageTemp = () => {
   const {
@@ -19,6 +20,7 @@ export const MyPageTemp = () => {
   } = LoginViewModel();
   const { userId } = FormViewModel();
   const [userNickName, setUserNickName] = useState("");
+  const navigation = useNavigation<any>();
 
   useEffect(() => {
     if (isLogin) {
@@ -27,20 +29,25 @@ export const MyPageTemp = () => {
     return;
   }, []);
 
-  //탈퇴를 하면 여전히 useQuery 데이터가 남아있는 문제가 발생 && 화면 전환 안 됨.
-
   return (
     <>
       {isLogin ? (
         <S.Container>
           <Header />
           <S.UserName>{userNickName}</S.UserName>
+          <S.PasswordChangeBtn
+            onPress={() => {
+              navigation.navigate("Password");
+            }}
+          >
+            <S.ButtonText>비밀번호 변경</S.ButtonText>
+          </S.PasswordChangeBtn>
           <S.ButtonBox>
-            <S.Button>
+            <S.DarkModeButton>
               <DarkMode />
-            </S.Button>
-            <S.Button>
-              <S.ModalTouchableOpacity
+            </S.DarkModeButton>
+            <S.UserButtons>
+              <S.TouchableOpacity
                 onPress={() =>
                   Alert.alert("로그아웃 재확인?", "로그아웃 하시겠습니까?", [
                     { text: "취소" },
@@ -57,8 +64,8 @@ export const MyPageTemp = () => {
                 }
               >
                 <S.ButtonText>로그아웃</S.ButtonText>
-              </S.ModalTouchableOpacity>
-              <S.ModalTouchableOpacity
+              </S.TouchableOpacity>
+              <S.TouchableOpacity
                 onPress={() =>
                   Alert.alert(
                     "탈퇴 재확인",
@@ -80,8 +87,8 @@ export const MyPageTemp = () => {
                 }
               >
                 <S.ButtonText>탈퇴하기</S.ButtonText>
-              </S.ModalTouchableOpacity>
-            </S.Button>
+              </S.TouchableOpacity>
+            </S.UserButtons>
           </S.ButtonBox>
         </S.Container>
       ) : (

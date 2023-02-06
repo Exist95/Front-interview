@@ -9,21 +9,39 @@ export const Container = styled.View`
 
 export const TextBox = styled.View`
   width: 100%;
-  height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
 `;
 
 export const NoteTitle = styled.Text`
-  font-size: 20px;
+  font-size: 30px;
   font-weight: 800;
   color: ${(props) => props.theme.textColor};
 `;
 
 export const NotePoint = styled.Text`
-  font-size: 20px;
+  font-size: 30px;
   font-weight: 800;
-
   color: ${(props) => props.theme.textColor};
 `;
+
+export const NoteTable = styled.ScrollView`
+
+  gap: 10px;
+  width: 300px;
+  height: 1000px;
+`;
+
+export const ListQuestionScrollView = styled.ScrollView``;
+
+export const LoadingSpinner = styled.ActivityIndicator`
+  flex: 1;
+  justify-content: center;
+  background-color: ${(props) => props.theme.bgColor};
+`;
+
+
+
+
+

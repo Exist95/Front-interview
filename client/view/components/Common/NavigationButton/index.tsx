@@ -19,8 +19,16 @@ export const NavigationButton = ({
 }: INavigationButtonProps) => {
   const navigation = useNavigation<any>();
   const queryClient = useQueryClient();
-  const { userName, email, password, resetForm, setUserId, setIsLogin } =
-    FormViewModel();
+  const {
+    userName,
+    email,
+    password,
+    resetForm,
+    setUserId,
+    validUserName,
+    validEmail,
+    validPassword,
+  } = FormViewModel();
   const { storeToken } = LoginViewModel();
   const {
     setQRandomNum,
@@ -84,19 +92,50 @@ export const NavigationButton = ({
   };
 
   return (
-    <S.BtnContainer
-      onPress={() => {
-        if (text === "회원가입") {
-          onSubmitSignUp();
-        } else if (text === "로그인") {
-          onSubmitLogin();
-        } else {
-          navigation.navigate(destination);
-        }
-        if (destination === "Questions" && isLoading === false) startQuestion();
-      }}
-    >
-      <S.BtnText>{text}</S.BtnText>
-    </S.BtnContainer>
+    <>
+      {text === "회원가입" ? (
+        <S.BtnContainer
+          disabled={
+            validUserName &&
+            validEmail &&
+            validPassword &&
+            userName.length > 0 &&
+            email.length > 0 &&
+            password.length > 0
+              ? false
+              : true
+          }
+          style={
+            validUserName &&
+            validEmail &&
+            validPassword &&
+            userName.length > 0 &&
+            email.length > 0 &&
+            password.length > 0
+              ? null
+              : { backgroundColor: "gray" }
+          }
+          onPress={() => {
+            onSubmitSignUp();
+          }}
+        >
+          <S.BtnText>{text}</S.BtnText>
+        </S.BtnContainer>
+      ) : (
+        <S.BtnContainer
+          onPress={() => {
+            if (text === "로그인") {
+              onSubmitLogin();
+            } else {
+              navigation.navigate(destination);
+            }
+            if (destination === "Questions" && isLoading === false)
+              startQuestion();
+          }}
+        >
+          <S.BtnText>{text}</S.BtnText>
+        </S.BtnContainer>
+      )}
+    </>
   );
 };

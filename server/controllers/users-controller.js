@@ -95,7 +95,6 @@ const updateUser = async (req, res, next) => {
   }
 
   let prePoint = user.totalPoint;
-  console.log(prePoint);
 
   if (!totalPoint) {
     user.password = password;
@@ -110,7 +109,7 @@ const updateUser = async (req, res, next) => {
     }
   } else if (totalPoint && wrongAnswer) {
     user.totalPoint = prePoint + totalPoint;
-    user.wrongAnswer = [...user.wrongAnswer, wrongAnswer];
+    user.wrongAnswer = [...user.wrongAnswer, ...wrongAnswer];
     try {
       await user.save();
     } catch {
@@ -222,7 +221,7 @@ const login = async (req, res, next) => {
     return next(error);
   }
 
-  if (!existingUser) {
+  if (!existingUser || existingUser.password !== password) {
     const error = res
       .status(403)
       .json({ message: "Invalid credentials, could not log you in." });
@@ -230,33 +229,12 @@ const login = async (req, res, next) => {
     return next(error);
   }
 
-  // let isValidPassword = false;
-  // try {
-  //   //compare - 평문 비밀번호를 인수 받는다.
-  //   isValidPassword = await bcrypt.compare(password, existingUser.password);
-  // } catch (err) {
-  //   const error = res.status(500).json({
-  //     message:
-  //       "Could not log you in, please check your credentials and try again.",
-  //   });
-
-  //   return next(error);
-  // }
-
-  // if (!isValidPassword) {
-  //   const error = res
-  //     .status(403)
-  //     .json({ message: "Invalid credentials, could not log you in." });
-
-  //   return next(error);
-  // }
-
   let token;
   try {
     token = jwt.sign(
       { userId: existingUser.id, email: existingUser.email },
       `${process.env.JWT_KEY}`,
-      { expiresIn: "1h" }
+      { expiresIn: "2200h" }
     );
   } catch (err) {
     const error = res

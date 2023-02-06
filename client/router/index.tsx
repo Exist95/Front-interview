@@ -21,6 +21,7 @@ export const TabBar = () => {
         name="홈"
         component={Main}
         options={{
+          unmountOnBlur: true,
           tabBarIcon: () => <MaterialCommunityIcons name="home" size={23} />,
         }}
       />
@@ -28,6 +29,7 @@ export const TabBar = () => {
         name="오답노트"
         component={Note}
         options={{
+          unmountOnBlur: true,
           tabBarIcon: () => (
             <MaterialCommunityIcons name="notebook" size={23} />
           ),
@@ -37,6 +39,7 @@ export const TabBar = () => {
         name="랭킹"
         component={Ranking}
         options={{
+          unmountOnBlur: true,
           tabBarIcon: () => <MaterialCommunityIcons name="trophy" size={23} />,
         }}
       />
@@ -44,6 +47,7 @@ export const TabBar = () => {
         name="나의 프터뷰"
         component={MyPage}
         options={{
+          unmountOnBlur: true,
           tabBarIcon: () => (
             <MaterialCommunityIcons name="human-greeting-variant" size={23} />
           ),

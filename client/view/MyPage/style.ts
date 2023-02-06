@@ -23,13 +23,38 @@ export const ButtonBox = styled.View`
   width: 100%;
 `;
 
-export const Button = styled.View`
+export const DarkModeButton = styled.View`
   background-color: #ebb5b4;
   width: 150px;
   height: 150px;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
+`;
+
+export const UserButtons = styled.View`
+  background-color: #ebb5b4;
+  width: 150px;
+  height: 150px;
+  justify-content: space-around;
+  align-items: center;
+`;
+
+export const ButtonText = styled.Text`
+  color: ${(props) => props.theme.textColor};
   text-align: center;
+`;
+
+export const TouchableOpacity = styled.TouchableOpacity`
+  padding: 10px;
+  background-color: ${(props) => props.theme.buttonColor};
+  border-radius: 7px;
+`;
+
+export const PasswordChangeBtn = styled(TouchableOpacity)`
+  margin-bottom: 20%;
+  width: 130px;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const Profile = styled.Image`
@@ -45,42 +70,8 @@ export const RankingBox = styled.Text`
   color: ${(props) => props.theme.textColor};
 `;
 
-export const ModalOverlay = styled.Pressable`
-  flex: 1;
-  justify-content: flex-end;
-`;
-
-export const bottomSheetContainer = styled.View`
-  height: 300;
-  background-color: #fff;
-  border-top-left-radius: 7;
-  border-top-right-radius: 7;
-  padding: 20px;
-`;
-
-export const ModalContentsBox = styled.Text`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  background-color: rgba(0, 0, 0, 0.7);
-  flex: 1;
-`;
-
-export const ModalTouchableOpacity = styled.TouchableOpacity`
-  padding: 10px;
-  background-color: ${(props) => props.theme.buttonColor};
-  border-radius: 7px;
-  margin-top: 30px;
-  margin-bottom: 30px;
-`;
-
 export const LoadingSpinner = styled.ActivityIndicator`
   flex: 1;
   justify-content: center;
   background-color: ${(props) => props.theme.bgColor};
-`;
-
-export const ButtonText = styled.Text`
-  color: ${(props) => props.theme.textColor};
 `;
