@@ -1,19 +1,26 @@
 # 프터뷰
 
 ## 소개
+주니어 개발자들에게 잘 알려진 프론트엔드 기술면접 기출 문제를 풀 수 있는 모바일 게임 애플리케이션입니다.
 
 ## 팀원 소개
 
 |[노종열](https://github.com/Exist95)|[홍다희](https://github.com/hongdahee)|
 |:---:|:---:|
-||FE|
+|:FULL|:FRONT|
 |<img src="https://avatars.githubusercontent.com/u/96723716?v=4" width="100">|<img src="https://avatars.githubusercontent.com/u/107875003?v=4" width="100">|
 
 ## 스택
+FRONT:
+BACK:
 
 ## 기술시연
 
 ## 문서
+API 명세서
+FIGMA
+종열님 회고
+다희님 회고
 
 ## 커밋 컨벤션
 ### 예시) [STYLE]: 스타일 변경
