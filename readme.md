@@ -66,4 +66,5 @@ BACK: JavaScript, Node.js, Express, MongoDB, GCP
 |                   메인 & 비로그인 접근 제한                   |                   회원가입                    |                         로그인                          |
 | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
 
-| <img src="https://user-images.githubusercontent.com/107875003/216996463-395490a6-606a-4b24-a6ee-c9381e8c3345.mp4" alt="메인_비로그인" width=70%> | <img src="https://user-images.githubusercontent.com/107875003/216997030-c65f9cd6-5164-44e0-a54b-395638f272ab.mp4" alt="회원가입" width=70%> | <img src="https://user-images.githubusercontent.com/107875003/216997405-bd79af72-760d-4fc8-8338-d9160ce092dc.mp4" alt="로그인" width=70%> |
+| <img src="https://user-images.githubusercontent.com/107875003/217008346-c15bfda5-3aec-44f7-b882-3785786e9917.gif" alt="메인_비로그인" width=70%> | <img src="https://user-images.githubusercontent.com/107875003/216997030-c65f9cd6-5164-44e0-a54b-395638f272ab.mp4" alt="회원가입" width=70%> | <img src="https://user-images.githubusercontent.com/107875003/216997405-bd79af72-760d-4fc8-8338-d9160ce092dc.mp4" alt="로그인" width=70%> |
+
