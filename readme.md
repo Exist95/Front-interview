@@ -1,7 +1,15 @@
-# 프터뷰
+# 🚀 프터뷰
 
-## 소개
-주니어 개발자들에게 잘 알려진 프론트엔드 기술면접 기출 문제를 풀 수 있는 모바일 게임 애플리케이션입니다.
+##🔎 소개
+![템플릿](https://user-images.githubusercontent.com/96723716/217003210-f0219181-f194-40e2-8149-f28951ed6c65.png)
+### "당신도 취업할 수 있다!"
+</br>
+
+암기하는 과정은 중요하지 않아요! 오래 기억해서 면접할 때 잘 말할 수 있느냐가 중요한 거죠! 
+
+지루한 시간을 보내고 있을 취준생을 십분 이해해 즐거움과 더불어 장기기억으로까지 만들 수 있는 게임을 만들어 찾아왔어요.
+
+널리 알려진 프론트엔드 주니어 개발자를 위한 기술면접 리스트를 반영하여 암기의 틀을 제공하고 틀린 문제를 오답노트에서 마주하여 복습해 보아요.
 
 ## 팀원 소개
 
@@ -11,16 +19,20 @@
 |<img src="https://avatars.githubusercontent.com/u/96723716?v=4" width="100">|<img src="https://avatars.githubusercontent.com/u/107875003?v=4" width="100">|
 
 ## 스택
-FRONT:
-BACK:
+FRONT: TypeScript, React-Native, React-Query, Styled-components, Recoil, Axios
+</br>
+BACK: JavaScript, Node.js, Express, MongoDB, GCP
 
 ## 기술시연
 
 ## 문서
-API 명세서
-FIGMA
-종열님 회고
-다희님 회고
+<ul>
+<li><a href="https://spiritual-ragdoll-604.notion.site/API-03ad22c90d244cff818b3e7dc0c7060d" target='_blank'>API 명세서</a></li>
+<li><a href="https://www.figma.com/file/zQQBliGhOTXXbfsQ1n0wQp/프터뷰?node-id=0%3A1&t=pnKg2G1DgaR6ceTD-1">FIGMA</a></li>
+<li>종열님 회고</li>
+<li>다희님 회고</li>
+</ul>
+</br>
 
 ## 커밋 컨벤션
 ### 예시) [STYLE]: 스타일 변경
