@@ -6,7 +6,7 @@
 
 </br>
 
-##🔎 소개
+## 🔎 소개
 
 ![템플릿](https://user-images.githubusercontent.com/96723716/217003210-f0219181-f194-40e2-8149-f28951ed6c65.png)
 ### "당신도 취업할 수 있다!"
@@ -41,8 +41,8 @@ BACK: JavaScript, Node.js, Express, MongoDB, GCP
 ## 문서
 <ul>
 <li><a href="https://spiritual-ragdoll-604.notion.site/API-03ad22c90d244cff818b3e7dc0c7060d" target='_blank'>API 명세서</a></li>
-<li><a href="https://www.figma.com/file/zQQBliGhOTXXbfsQ1n0wQp/프터뷰?node-id=0%3A1&t=pnKg2G1DgaR6ceTD-1">FIGMA</a></li>
-<li>종열님 회고</li>
+<li><a href="https://www.figma.com/file/zQQBliGhOTXXbfsQ1n0wQp/프터뷰?node-id=0%3A1&t=pnKg2G1DgaR6ceTD-1" target='_blank'>FIGMA</a></li>
+<li><a href="https://spiritual-ragdoll-604.notion.site/4d58c30de54d4f0c8ea3940e2a205514" target='_blank'>종열님 회고</a></li>
 <li>다희님 회고</li>
 </ul>
 </br>
