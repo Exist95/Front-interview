@@ -1,12 +1,19 @@
 # 프터뷰
 
+## 소개
+
 ## 팀원 소개
 
 |[노종열](https://github.com/Exist95)|[홍다희](https://github.com/hongdahee)|
 |:---:|:---:|
-|BE|FE|
+||FE|
 |<img src="https://avatars.githubusercontent.com/u/96723716?v=4" width="100">|<img src="https://avatars.githubusercontent.com/u/107875003?v=4" width="100">|
 
+## 스택
+
+## 기술시연
+
+## 문서
 
 ## 커밋 컨벤션
 ### 예시) [STYLE]: 스타일 변경
