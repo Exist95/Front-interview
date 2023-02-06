@@ -37,6 +37,17 @@ FRONT: TypeScript, React-Native, React-Query, Styled-components, Recoil, Axios
 BACK: JavaScript, Node.js, Express, MongoDB, GCP
 
 ## 기술시연
+|                   메인 & 비로그인 시 화면                 |                   회원가입                    |                         로그인                         |
+| :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
+| <img src="https://user-images.githubusercontent.com/107875003/217010267-d401000b-d5a0-4133-9d63-b3bcc595aa8f.gif" alt="메인_비로그인" width=70%> | <img src="https://user-images.githubusercontent.com/107875003/217010961-37e694e7-7a04-4cc5-bf7d-f24cb48a1a88.gif" alt="회원가입" width=70%> | <img src="https://user-images.githubusercontent.com/107875003/217011296-23918862-9300-4070-921d-3076f6dc15f0.gif" alt="로그인" width=70%> |
+
+|                         문제 페이지                         |                  오답노트                  |                         랭킹                         |
+| :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
+| <img src="https://user-images.githubusercontent.com/107875003/217012108-fb40ebb6-d4b2-49ae-a40e-21d079ae9309.gif" alt="문제페이지" width=70%> | <img src="https://user-images.githubusercontent.com/107875003/217013174-1d943c3c-8b57-467c-b6a5-61fcb9827860.gif" alt="오답노트" width=70%> | <img src="https://user-images.githubusercontent.com/107875003/217013473-d10acd31-c1ac-47c8-8719-7bd59f65b021.gif" alt="랭킹" width=70%> |
+
+|                다크모드 & 로그아웃                 |                     비밀번호 변경                      |                     회원탈퇴                     |
+| :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
+| <img src="https://user-images.githubusercontent.com/107875003/217016280-baa76448-a22f-4355-a37d-dfe90df957df.gif" alt="다크모드_로그아웃" width=70%> | <img src="https://user-images.githubusercontent.com/107875003/217016731-8445bd22-ad04-4b48-84e2-77c942869f13.gif" alt="비밀번호변경" width=70%> | <img src="https://user-images.githubusercontent.com/107875003/217017029-4ea39779-4530-44c1-ab76-d24bdc442e68.gif" alt="회원탈퇴" width=70%> |
 
 ## 문서
 <ul>
@@ -60,11 +71,3 @@ BACK: JavaScript, Node.js, Express, MongoDB, GCP
 
 ## Git 머지 전략
 - Squash and merge
-
-## 기술 시연
-
-|                   메인 & 비로그인 접근 제한                   |                   회원가입                    |                         로그인                          |
-| :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
-
-| <img src="https://user-images.githubusercontent.com/107875003/217008346-c15bfda5-3aec-44f7-b882-3785786e9917.gif" alt="메인_비로그인" width=70%> | <img src="https://user-images.githubusercontent.com/107875003/216997030-c65f9cd6-5164-44e0-a54b-395638f272ab.mp4" alt="회원가입" width=70%> | <img src="https://user-images.githubusercontent.com/107875003/216997405-bd79af72-760d-4fc8-8338-d9160ce092dc.mp4" alt="로그인" width=70%> |
-
