@@ -3,14 +3,13 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { ThemeProvider } from "styled-components/native";
 import { TabBar } from ".";
 import { Login } from "../pages/Auth/Login";
-import { SignUp } from "../pages/Auth/SignUp";
 import { MyPage } from "../pages/MyPage";
 import { Password } from "../pages/Password";
 import { Questions } from "../pages/Questions";
 import Result from "../pages/Result";
 import { darkTheme, lightTheme } from "../theme/theme";
 import { DarkModeViewModel } from "../vm/DarkModeViewModel";
-
+import { SignUp } from "../pages/Auth/SignUp";
 const Stack = createNativeStackNavigator();
 
 export const StackNavigator = () => {

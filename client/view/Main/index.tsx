@@ -8,6 +8,15 @@ import { useEffect, useRef } from "react";
 export const MainTemp = () => {
   const minititle = useRef(new Animated.Value(0)).current;
   const maintitle = useRef(new Animated.Value(0)).current;
+  const minititleList = [
+    "내 귀에",
+    "기술면접 완전 정복",
+    "프론트의, 프론트에 의한, 프론트를 위한",
+    "프론트 A to Z",
+  ];
+
+  const randomTitle =
+    minititleList[Math.floor(Math.random() * minititleList.length)];
 
   const LongfadeIn = () => {
     Animated.timing(minititle, {
@@ -33,7 +42,7 @@ export const MainTemp = () => {
       <Header />
       <S.AnimationContainer>
         <Animated.View style={{ opacity: minititle }}>
-          <S.SubTitle>내 귀에</S.SubTitle>
+          <S.SubTitle>{randomTitle}</S.SubTitle>
         </Animated.View>
         <Animated.View
           style={{

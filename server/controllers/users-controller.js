@@ -221,34 +221,13 @@ const login = async (req, res, next) => {
     return next(error);
   }
 
-  if (!existingUser) {
+  if (!existingUser || existingUser.password !== password) {
     const error = res
       .status(403)
       .json({ message: "Invalid credentials, could not log you in." });
 
     return next(error);
   }
-
-  // let isValidPassword = false;
-  // try {
-  //   //compare - 평문 비밀번호를 인수 받는다.
-  //   isValidPassword = await bcrypt.compare(password, existingUser.password);
-  // } catch (err) {
-  //   const error = res.status(500).json({
-  //     message:
-  //       "Could not log you in, please check your credentials and try again.",
-  //   });
-
-  //   return next(error);
-  // }
-
-  // if (!isValidPassword) {
-  //   const error = res
-  //     .status(403)
-  //     .json({ message: "Invalid credentials, could not log you in." });
-
-  //   return next(error);
-  // }
 
   let token;
   try {
