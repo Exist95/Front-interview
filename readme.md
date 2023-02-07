@@ -2,7 +2,7 @@
 
 ## 🔎 소개
 
-![템플릿](https://user-images.githubusercontent.com/96723716/217003210-f0219181-f194-40e2-8149-f28951ed6c65.png)
+![프터뷰 배너](https://user-images.githubusercontent.com/96723716/217214190-e8bc3e83-4038-4469-b528-be39b97c9bf2.png)
 ### "당신도 취업할 수 있다!"
 </br>
 
@@ -31,8 +31,9 @@ npm install
 npm start
 
 #BE
-npm
+npm install
 npm start
+server port - 8080
 ```
 
 ## 📱 기술시연
@@ -55,7 +56,6 @@ npm start
 <li><a href="https://spiritual-ragdoll-604.notion.site/4d58c30de54d4f0c8ea3940e2a205514" target='_blank'>종열님 회고</a></li>
 <li>다희님 회고</li>
 </ul>
-</br>
 
 ## 🚑 미해결 이슈
 - [ ] 스토어 등록
