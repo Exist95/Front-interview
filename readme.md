@@ -82,6 +82,7 @@ server port - 8080
 - [REFECTOR]: 리팩토링에 대한 커밋
 - [TEST]: 누락된 테스트 추가 또는 기존 테스트 수정
 - [CHORE]: 코드 수정 없이 설정을 변경, 패키지 설치
+- [MERGE]: 코드 병합
 
 ## ⚙ Git 머지 전략
 - Squash and merge
