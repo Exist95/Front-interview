@@ -54,7 +54,7 @@ server port - 8080
 <li><a href="https://spiritual-ragdoll-604.notion.site/API-03ad22c90d244cff818b3e7dc0c7060d" target='_blank'>API 명세서</a></li>
 <li><a href="https://www.figma.com/file/zQQBliGhOTXXbfsQ1n0wQp/프터뷰?node-id=0%3A1&t=pnKg2G1DgaR6ceTD-1" target='_blank'>FIGMA</a></li>
 <li><a href="https://spiritual-ragdoll-604.notion.site/4d58c30de54d4f0c8ea3940e2a205514" target='_blank'>종열님 회고</a></li>
-<li>다희님 회고</li>
+<li><a href="https://velog.io/@hongdahee8383/%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C-%EA%B8%B0%EC%88%A0%EB%A9%B4%EC%A0%91-%EB%8C%80%EB%B9%84-%EC%84%9C%EB%B9%84%EC%8A%A4-%ED%94%84%ED%84%B0%EB%B7%B0-%ED%9A%8C%EA%B3%A0" target='_blank'>다희님 회고</a></li>
 </ul>
 
 ## 🚑 미해결 이슈
